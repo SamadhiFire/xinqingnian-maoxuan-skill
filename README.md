@@ -1,22 +1,41 @@
-# 毛选拆局.skill
+<div align="center">
 
-> “最近大家都在蒸馏 skill。蒸馏完如果还是不会解决问题，那就等于把热闹做成了周边。”
+<h1>毛选拆局.skill</h1>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
-[![Codex](https://img.shields.io/badge/Codex-Compatible-black)](https://openai.com/)
-[![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green)](https://agentskills.io)
+<p><em>“最近大家都在蒸馏 skill。蒸馏完如果还是不会解决问题，那就等于把热闹做成了周边。”</em></p>
 
-把《毛泽东选集》蒸馏成一个真能拆现实问题的 skill。
+<p>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="https://claude.ai/code"><img src="https://img.shields.io/badge/Claude%20Code-Skill-blueviolet" alt="Claude Code Skill"></a>
+  <a href="https://openai.com/"><img src="https://img.shields.io/badge/Codex-Compatible-black" alt="Codex Compatible"></a>
+  <a href="https://agentskills.io"><img src="https://img.shields.io/badge/AgentSkills-Standard-green" alt="AgentSkills Standard"></a>
+</p>
 
-不是语录复读机，不是高压话术生成器，也不是“主要矛盾”四个字到处乱扣帽子。
-它干的正事只有一个：**先把问题看清，再把局面拆开，最后给出能往前推的判断和动作。**
+<br>
 
-如果非要用一句不太谦虚的话介绍它：
+<p><strong>把《毛泽东选集》蒸馏成一个真能拆现实问题的 skill。</strong></p>
 
-**你可以把它理解成，把“新中国最会解决问题的那种脑子”请来，当一次临时参谋。**
+<p>
+  不是语录复读机，不是高压话术生成器，也不是“主要矛盾”四个字到处乱扣帽子。<br>
+  它只干一件正事：先把问题看清，再把局面拆开，最后给出能往前推的判断和动作。
+</p>
 
-[安装](#安装) · [使用](#使用) · [适用场景](#适用场景) · [输出结果](#输出结果) · [边界](#边界) · [仓库结构](#仓库结构)
+<br>
+
+<p><strong>你可以把它理解成，把“新中国最会解决问题的那种脑子”请来，当一次临时参谋。</strong></p>
+
+<br>
+
+<p>
+  <a href="#安装">安装</a> ·
+  <a href="#使用">使用</a> ·
+  <a href="#适用场景">适用场景</a> ·
+  <a href="#输出结果">输出结果</a> ·
+  <a href="#边界">边界</a> ·
+  <a href="#仓库结构">仓库结构</a>
+</p>
+
+</div>
 
 ---
 
