@@ -43,44 +43,11 @@
 
 更适合这类“表面像摩擦，底层其实是结构问题”的局面：
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-
-**项目推进**  
-项目推进不动，人人都在忙，但关键结果就是不动。
-
-  </td>
-    <td width="50%" valign="top">
-
-**多人拉扯**  
-合伙人、同事、上下级之间互相拉扯，信息不透明，责任不清楚。
-
-  </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-
-**团队错位**  
-表面像执行差，实质是路线、阶段和控制点没对齐。
-
-  </td>
-    <td width="50%" valign="top">
-
-**关系边界**  
-表面像情绪冲突，背后其实是边界、资源、第三方和旧账。
-
-  </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-
-**重大选择**  
-你在纠结换工作、止损、继续谈还是直接掀桌，但脑子里还是一锅粥。
-
-  </td>
-  </tr>
-</table>
+- `项目推进卡住`：项目推进不动，人人都在忙，但关键结果就是不动。
+- `多人关系拉扯`：合伙人、同事、上下级之间互相拉扯，信息不透明，责任不清楚。
+- `团队协同错位`：表面像执行差，实质是路线、阶段和控制点没对齐。
+- `关系边界混乱`：表面像情绪冲突，背后其实是边界、资源、第三方和旧账。
+- `重大选择难下`：你在纠结换工作、止损、继续谈还是直接掀桌，但脑子里还是一锅粥。
 
 一句话：
 
@@ -90,58 +57,11 @@
 
 不是把语言换成“毛选口吻”，而是把处理问题的方法换掉了：
 
-<table>
-  <tr>
-    <td width="22%" valign="top">
-
-**不抢答**
-
-  </td>
-    <td valign="top">
-先调查，再判断，不装一眼看穿全局。
-  </td>
-  </tr>
-  <tr>
-    <td width="22%" valign="top">
-
-**不空喊**
-
-  </td>
-    <td valign="top">
-不堆大词，重点是主要矛盾、阶段、力量、路线和风险。
-  </td>
-  </tr>
-  <tr>
-    <td width="22%" valign="top">
-
-**不迷路**
-
-  </td>
-    <td valign="top">
-长问题先钉主问题、原始问题对照和案件工作单，不靠模型自己“记住”。
-  </td>
-  </tr>
-  <tr>
-    <td width="22%" valign="top">
-
-**不只分析**
-
-  </td>
-    <td valign="top">
-最后会落到下一步动作，而不是停在一段气势很足的话。
-  </td>
-  </tr>
-  <tr>
-    <td width="22%" valign="top">
-
-**能出成品**
-
-  </td>
-    <td valign="top">
-除了文字版分析，还能生成可保存、可分享的单文件 HTML 报告。
-  </td>
-  </tr>
-</table>
+1. `不抢答`：先调查，再判断，不装一眼看穿全局。
+2. `不空喊`：不堆大词，重点是主要矛盾、阶段、力量、路线和风险。
+3. `不迷路`：长问题先钉主问题、原始问题对照和案件工作单，不靠模型自己“记住”。
+4. `不只分析`：最后会落到下一步动作，而不是停在一段气势很足的话。
+5. `能出成品`：除了文字版分析，还能生成可保存、可分享的单文件 HTML 报告。
 
 ## 他怎么工作
 
@@ -150,43 +70,36 @@
 > **先问清，再拆局；先定线，再交付。**
 
 ```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "background": "#f7f1e7",
-    "primaryColor": "#f6e2b8",
-    "primaryBorderColor": "#b6492d",
-    "primaryTextColor": "#5a120d",
-    "secondaryColor": "#f0c36d",
-    "secondaryBorderColor": "#b6492d",
-    "secondaryTextColor": "#5a120d",
-    "tertiaryColor": "#8f140c",
-    "tertiaryBorderColor": "#d8c7a3",
-    "tertiaryTextColor": "#fff4db",
-    "lineColor": "#b6492d",
-    "fontFamily": "Georgia, 'Noto Serif SC', 'Source Han Serif SC', serif"
-  }
-}}%%
-mindmap
-  root((四步工作法))
-    01 先问清
-      目标 / 事件 / 人物 / 尝试 / 约束
-      先补齐关键结构
-      主问题锚点
-      原始问题对照
-      案件工作单
-    02 再拆局
-      矛盾 / 阶段 / 力量 / 风险
-      先看清局面怎么卡住
-      再判断真正的主问题
-    03 后定路线
-      路线 / 顺序 / 边界 / 动作
-      不是空讲方向
-      而是排出先后手和边界线
-    04 再交付
-      文字分析 / HTML 报告
-      落成可直接使用的成品
-      能复看 / 能转发 / 能继续推进
+flowchart TB
+    A["四步工作法"]:::root
+
+    A --> B["01 先问清"]:::stageGold
+    B --> B1["目标 / 事件 / 人物 / 尝试 / 约束"]:::leafCream
+    B --> B2["先补齐关键结构"]:::leafCream
+    B --> B3["主问题锚点 / 原始问题对照 / 案件工作单"]:::leafCream
+
+    A --> C["02 再拆局"]:::stageRed
+    C --> C1["矛盾 / 阶段 / 力量 / 风险"]:::leafWarm
+    C --> C2["先看清局面怎么卡住"]:::leafWarm
+    C --> C3["再判断真正的主问题"]:::leafWarm
+
+    A --> D["03 后定路线"]:::stageBrown
+    D --> D1["路线 / 顺序 / 边界 / 动作"]:::leafRose
+    D --> D2["不是空讲方向"]:::leafRose
+    D --> D3["而是排出先后手和边界线"]:::leafRose
+
+    A --> E["04 再交付"]:::stageGold
+    E --> E1["文字分析 / HTML 报告"]:::leafCream
+    E --> E2["落成可直接使用的成品"]:::leafCream
+    E --> E3["能复看 / 能转发 / 能继续推进"]:::leafCream
+
+    classDef root fill:#8f140c,color:#fff4db,stroke:#d8c7a3,stroke-width:3px;
+    classDef stageGold fill:#f0c36d,color:#5a120d,stroke:#b6492d,stroke-width:2px;
+    classDef stageRed fill:#b6492d,color:#fff4db,stroke:#8f140c,stroke-width:2px;
+    classDef stageBrown fill:#a63a2c,color:#fff4db,stroke:#8f140c,stroke-width:2px;
+    classDef leafCream fill:#f7f1e7,color:#5a120d,stroke:#d8c7a3,stroke-width:1px;
+    classDef leafWarm fill:#f6e2b8,color:#5a120d,stroke:#d8c7a3,stroke-width:1px;
+    classDef leafRose fill:#f3ddd6,color:#5a120d,stroke:#d8c7a3,stroke-width:1px;
 ```
 
 一句话：
@@ -426,72 +339,24 @@ git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/sk
 
 ## 仓库结构
 
-对外展示的内容主要是这些：
-
-- [`README.md`](./README.md)：项目介绍、安装方式、使用示例和 HTML 预览
-- [`LICENSE`](./LICENSE)：MIT 许可
-- [`SKILL.md`](./SKILL.md)：Skill 主入口，供 Agent 实际加载
-
-`examples/`
-
-- [`examples/组织分叉案例输入.md`](./examples/组织分叉案例输入.md)：复杂案例输入样例
-- [`examples/组织分叉案例报告.html`](./examples/组织分叉案例报告.html)：完整 HTML 报告样例
-- `examples/screenshots/`：README 里使用的报告截图预览
-
-`references/`
-
-- `categories/`
-  - [`problem-taxonomy.md`](./references/categories/problem-taxonomy.md)
-- `clarification/`
-  - [`ambiguity-gate.md`](./references/clarification/ambiguity-gate.md)
-  - [`focus-anchor.md`](./references/clarification/focus-anchor.md)
-  - [`intake-flow.md`](./references/clarification/intake-flow.md)
-  - [`problem-restatement.md`](./references/clarification/problem-restatement.md)
-  - [`question-packs-by-domain.md`](./references/clarification/question-packs-by-domain.md)
-- `html-output/`
-  - [`report-build-rules.md`](./references/html-output/report-build-rules.md)
-  - [`visual-report-spec.md`](./references/html-output/visual-report-spec.md)
-  - [`visual-report-template.html`](./references/html-output/visual-report-template.html)
-- `methods/`
-  - [`alliance-boundaries.md`](./references/methods/alliance-boundaries.md)
-  - [`communication-calibration.md`](./references/methods/communication-calibration.md)
-  - [`core-contradiction.md`](./references/methods/core-contradiction.md)
-  - [`execution-routes.md`](./references/methods/execution-routes.md)
-  - [`forces-resources.md`](./references/methods/forces-resources.md)
-  - [`investigation.md`](./references/methods/investigation.md)
-  - [`method-index.md`](./references/methods/method-index.md)
-  - [`review-loop.md`](./references/methods/review-loop.md)
-  - [`stage-judgment.md`](./references/methods/stage-judgment.md)
-- `risks/`
-  - [`anti-dogmatism.md`](./references/risks/anti-dogmatism.md)
-  - [`base-area-spark.md`](./references/risks/base-area-spark.md)
-  - [`committee-central-responsibility.md`](./references/risks/committee-central-responsibility.md)
-  - [`concentrated-force.md`](./references/risks/concentrated-force.md)
-  - [`internal-external-causes.md`](./references/risks/internal-external-causes.md)
-  - [`legitimacy.md`](./references/risks/legitimacy.md)
-  - [`main-front-shift.md`](./references/risks/main-front-shift.md)
-  - [`mass-line-guidance.md`](./references/risks/mass-line-guidance.md)
-  - [`middle-forces-hardliners.md`](./references/risks/middle-forces-hardliners.md)
-  - [`misuse-boundaries.md`](./references/risks/misuse-boundaries.md)
-  - [`no-investigation-no-right-to-speak.md`](./references/risks/no-investigation-no-right-to-speak.md)
-  - [`practice-stage-review.md`](./references/risks/practice-stage-review.md)
-  - [`principal-contradiction.md`](./references/risks/principal-contradiction.md)
-  - [`propaganda-unified-line.md`](./references/risks/propaganda-unified-line.md)
-  - [`protracted-war-endgame.md`](./references/risks/protracted-war-endgame.md)
-  - [`rectification-criticism.md`](./references/risks/rectification-criticism.md)
-  - [`translation-red-lines.md`](./references/risks/translation-red-lines.md)
-  - [`united-front-independence.md`](./references/risks/united-front-independence.md)
-- `routing/`
-  - [`confidence-rules.md`](./references/routing/confidence-rules.md)
-  - [`output-mode-routing.md`](./references/routing/output-mode-routing.md)
-- `scenarios/`
-  - [`learning-growth.md`](./references/scenarios/learning-growth.md)
-  - [`life-decisions.md`](./references/scenarios/life-decisions.md)
-  - [`relationship-boundaries.md`](./references/scenarios/relationship-boundaries.md)
-  - [`scene-index.md`](./references/scenarios/scene-index.md)
-  - [`self-management.md`](./references/scenarios/self-management.md)
-  - [`team-governance.md`](./references/scenarios/team-governance.md)
-  - [`work-execution.md`](./references/scenarios/work-execution.md)
+```text
+maozedong-maoxuan-skill/
+├── README.md                              # 项目介绍、安装方式、HTML 预览
+├── LICENSE                                # MIT 许可
+├── SKILL.md                               # 主入口
+├── examples/
+│   ├── 组织分叉案例输入.md                # 输入样例
+│   ├── 组织分叉案例报告.html              # HTML 报告样例
+│   └── screenshots/                       # README 预览截图
+└── references/
+    ├── categories/                        # 问题分类
+    ├── clarification/                     # 澄清与重述
+    ├── html-output/                       # HTML 输出规范
+    ├── methods/                           # 方法卡
+    ├── risks/                             # 误用边界与红线
+    ├── routing/                           # 输出路由
+    └── scenarios/                         # 场景入口
+```
 
 
 ## 最后一句
