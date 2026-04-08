@@ -167,40 +167,6 @@
 
 **越像“结构题”，越适合用它来拆。**
 
-## 安装
-
-### Claude Code
-
-Claude Code 会从项目里的 `.claude/skills/`，或全局的 `~/.claude/skills/` 读取 skill。
-
-```bash
-# 安装到当前项目（在你的项目根目录执行）
-mkdir -p .claude/skills
-git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git .claude/skills/maozedong-maoxuan-skill
-
-# 或安装到全局（所有项目都能用）
-git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.claude/skills/maozedong-maoxuan-skill
-```
-
-### Codex
-
-如果你在用 Codex，一般放进 `$CODEX_HOME/skills/` 或 `~/.codex/skills/` 即可。
-
-```bash
-git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/skills/maozedong-maoxuan-skill
-```
-
-### 其他平台
-
-不是每个平台都叫 skill，但大多数 agent 平台都支持“自定义系统提示词 / 自定义技能目录 / 项目级规则”。
-
-最省事的用法：
-
-**霸气地告诉你的Agent！：**
-
-```bash
-帮我安装这个skill：https://github.com/SamadhiFire/maozedong-maoxuan-skill?tab=readme-ov-file
-```
 
 ## 使用
 
@@ -323,6 +289,41 @@ git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/sk
 一句话：
 
 **别把方法论玩成气势道具。**
+
+## 安装
+
+### Claude Code
+
+Claude Code 会从项目里的 `.claude/skills/`，或全局的 `~/.claude/skills/` 读取 skill。
+
+```bash
+# 安装到当前项目（在你的项目根目录执行）
+mkdir -p .claude/skills
+git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git .claude/skills/maozedong-maoxuan-skill
+
+# 或安装到全局（所有项目都能用）
+git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.claude/skills/maozedong-maoxuan-skill
+```
+
+### Codex
+
+如果你在用 Codex，一般放进 `$CODEX_HOME/skills/` 或 `~/.codex/skills/` 即可。
+
+```bash
+git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/skills/maozedong-maoxuan-skill
+```
+
+### 其他平台
+
+不是每个平台都叫 skill，但大多数 agent 平台都支持“自定义系统提示词 / 自定义技能目录 / 项目级规则”。
+
+最省事的用法：
+
+**霸气地告诉你的Agent！：**
+
+```bash
+帮我安装这个skill：https://github.com/SamadhiFire/maozedong-maoxuan-skill?tab=readme-ov-file
+```
 
 ## 仓库结构
 
