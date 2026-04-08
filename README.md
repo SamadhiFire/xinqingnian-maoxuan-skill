@@ -17,7 +17,7 @@
 
 <p>
   不是语录复读机，不是高压话术生成器，也不是“主要矛盾”四个字到处乱扣帽子。<br>
-  他只干一件正事：<strong>先把问题一步一步梳理清楚，再把局面拆开，最后给出能往前推的判断和动作。<strong>
+  他只干一件正事：<strong>先把问题一步一步梳理清楚<strong>，再把局面拆开，最后给出能往前推的判断和动作。
 </p>
 
 <br>
@@ -67,30 +67,44 @@
 
 > **先问清，再拆局；先定线，再交付。**
 
-```mermaid
-flowchart LR
-    A["四步工作法<br/>先问清 → 再拆局 → 后定路线 → 再交付"]
+<table>
+  <tr>
+    <td width="50%" valign="top">
 
-    A --- B["01 先问清"]
-    B --> B1["目标 / 事件 / 人物 / 尝试 / 约束"]
-    B --> B2["先补齐关键结构"]
-    B --> B3["主问题锚点 / 原始问题对照 / 案件工作单"]
+**01 先问清**  
+目标 / 事件 / 人物 / 尝试 / 约束
 
-    A --- C["02 再拆局"]
-    C --> C1["矛盾 / 阶段 / 力量 / 风险"]
-    C --> C2["先看清局面怎么卡住"]
-    C --> C3["再判断真正的主问题"]
+先把关键结构补齐；长问题先做主问题锚点、原始问题对照和案件工作单，不拿猜测硬顶结论。
 
-    A --- D["03 后定路线"]
-    D --> D1["路线 / 顺序 / 边界 / 动作"]
-    D --> D2["不是空讲方向"]
-    D --> D3["而是排出先后手和边界线"]
+  </td>
+    <td width="50%" valign="top">
 
-    A --- E["04 再交付"]
-    E --> E1["文字分析 / HTML 报告"]
-    E --> E2["把判断落成可直接使用的成品"]
-    E --> E3["能复看 / 能转发 / 能继续推进"]
-```
+**02 再拆局**  
+矛盾 / 阶段 / 力量 / 风险
+
+先看清局面怎么卡住，再判断真正的主问题。
+
+  </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+
+**03 后定路线**  
+路线 / 顺序 / 边界 / 动作
+
+不是空讲方向，而是排出先后手和边界线。
+
+  </td>
+    <td width="50%" valign="top">
+
+**04 再交付**  
+文字分析 / HTML 报告
+
+把判断落成能直接拿去用、能复看、能转发的成品。
+
+  </td>
+  </tr>
+</table>
 
 一句话：
 
@@ -322,59 +336,9 @@ maozedong-maoxuan-skill/
 │   ├── 组织分叉案例输入.md          # 对外展示的复杂案例输入样例
 │   ├── 组织分叉案例报告.html        # 对外展示的完整 HTML 报告样例
 │   └── screenshots/                 # README 里用到的报告截图预览
-└── references/                      # Skill 运行时会按需读取的规则文档
-    ├── categories/
-    │   └── problem-taxonomy.md
-    ├── clarification/
-    │   ├── ambiguity-gate.md
-    │   ├── focus-anchor.md
-    │   ├── intake-flow.md
-    │   ├── problem-restatement.md
-    │   └── question-packs-by-domain.md
-    ├── html-output/
-    │   ├── report-build-rules.md
-    │   ├── visual-report-spec.md
-    │   └── visual-report-template.html
-    ├── methods/
-    │   ├── alliance-boundaries.md
-    │   ├── communication-calibration.md
-    │   ├── core-contradiction.md
-    │   ├── execution-routes.md
-    │   ├── forces-resources.md
-    │   ├── investigation.md
-    │   ├── method-index.md
-    │   ├── review-loop.md
-    │   └── stage-judgment.md
-    ├── risks/
-    │   ├── anti-dogmatism.md
-    │   ├── base-area-spark.md
-    │   ├── committee-central-responsibility.md
-    │   ├── concentrated-force.md
-    │   ├── internal-external-causes.md
-    │   ├── legitimacy.md
-    │   ├── main-front-shift.md
-    │   ├── mass-line-guidance.md
-    │   ├── middle-forces-hardliners.md
-    │   ├── misuse-boundaries.md
-    │   ├── no-investigation-no-right-to-speak.md
-    │   ├── practice-stage-review.md
-    │   ├── principal-contradiction.md
-    │   ├── propaganda-unified-line.md
-    │   ├── protracted-war-endgame.md
-    │   ├── rectification-criticism.md
-    │   ├── translation-red-lines.md
-    │   └── united-front-independence.md
-    ├── routing/
-    │   ├── confidence-rules.md
-    │   └── output-mode-routing.md
-    └── scenarios/
-        ├── learning-growth.md
-        ├── life-decisions.md
-        ├── relationship-boundaries.md
-        ├── scene-index.md
-        ├── self-management.md
-        ├── team-governance.md
-        └── work-execution.md
+├── references/                      # 分类、澄清、方法、风险、输出规则
+├── distill/                         # 蒸馏材料
+└── source-texts/                    # 原始文本
 ```
 
 
