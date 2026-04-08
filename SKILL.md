@@ -114,7 +114,7 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 - `references/categories/`
   用来做问题分类，先判断主领域、方法标签和复杂度。
 - `references/clarification/`
-  用来判断是否需要澄清、该怎么问、如何把问题重述成可分析版本。
+  用来判断是否需要澄清、该怎么问、如何把问题重述成可分析版本；复杂长问题还要用 `focus-anchor.md` 固定主问题，防止后面分析漂移。
 - `references/scenarios/`
   用来决定从哪个现实场景入口进入，例如工作推进、关系边界、学习成长、团队治理。
 - `references/methods/`
@@ -130,7 +130,7 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 
 这个 skill 的完整工作流，不是“看到问题就套方法”，而是下面这条链：
 
-`触发判断 -> 模糊性判断 -> 必要澄清 -> 问题重述 -> 分类 -> 场景入口 -> 方法链 -> 风险检查 -> 完成内容判断 -> 询问用户要文字版还是 HTML 版 -> 正式输出`
+`触发判断 -> 模糊性判断 -> 必要澄清 -> 主问题锚点 -> 问题重述 -> 分类 -> 场景入口 -> 方法链 -> 风险检查 -> 完成内容判断 -> 询问用户要文字版还是 HTML 版 -> 正式输出`
 
 下面按顺序说明。
 
@@ -146,7 +146,8 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 
 ### 2. 需要澄清时，怎么问
 
-先看 [intake-flow.md](./references/clarification/intake-flow.md)，再按需看 [question-packs-by-domain.md](./references/clarification/question-packs-by-domain.md)。
+先看 [intake-flow.md](./references/clarification/intake-flow.md)，再按需看 [question-packs-by-domain.md](./references/clarification/question-packs-by-domain.md)。  
+如果问题已经明显偏长、偏复杂、用户一次问了多个问题，或已经进入第二轮澄清，再看 [focus-anchor.md](./references/clarification/focus-anchor.md)。
 
 澄清时只做一件事：
 
@@ -164,11 +165,21 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 
 不要为了显得认真而无限追问，也不要把分场景追问包整包问完。
 
+复杂长问题里，光追问还不够。  
+要先用 `focus-anchor.md` 固定：
+
+- 这次真正要解决的主问题是什么
+- 本轮只优先回答哪 `1` 到 `2` 个问题
+- 哪些内容暂不展开
+
+否则很容易一边问一边扩题，最后分析对象漂移。
+
 ### 3. 澄清后，先做问题重述
 
 看 [problem-restatement.md](./references/clarification/problem-restatement.md)。
 
 问题重述的作用，是把用户原始叙述收束成一个可分析版本，避免后面一边分析一边改题。
+如果问题属于复杂长问题，问题重述前应先完成 `主问题锚点`，否则只有重述没有锚点，后续长文里仍可能丢失用户最初的关键问题。
 
 ### 4. 正式分析前，先做分类
 
@@ -233,6 +244,7 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 在进入最终交付前，先把内容判断完成：
 
 - 问题已经怎么重述
+- 主问题锚点是什么
 - 当前核心判断是什么
 - 该调用哪些方法
 - 风险边界在哪里
@@ -324,6 +336,7 @@ HTML 输出要求如下：
 
 - 先说当前还需要看清什么
 - 再说目前已经能成立的事实结构
+- 复杂长问题里，再补一句“这轮我先回答哪几个问题”
 - 再说为什么还不能直接下正式结论
 - 如果用户提过 `HTML` 或明显在等成品，再补一句：当前还不能生成 `HTML 报告`，等关键缺口补齐后再做
 - 只有用户明确追问 skill 机制时，才解释内部路由过程
