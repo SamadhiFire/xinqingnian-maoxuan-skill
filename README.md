@@ -350,21 +350,27 @@ git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/sk
 
 ```text
 maozedong-maoxuan-skill/
+├── .editorconfig                          # UTF-8 / LF 编辑器约束
+├── .gitattributes                         # Git 行尾规则
 ├── README.md                              # 项目介绍、安装方式、HTML 预览
 ├── LICENSE                                # MIT 许可
 ├── SKILL.md                               # 主入口
+├── agents/
+│   └── openai.yaml                        # Codex skill UI 元数据
 ├── examples/
 │   ├── 组织分叉案例输入.md                # 输入样例
 │   ├── 组织分叉案例报告.html              # HTML 报告样例
 │   └── screenshots/                       # README 预览截图
-└── references/
-    ├── categories/                        # 问题分类
-    ├── clarification/                     # 澄清与重述
-    ├── html-output/                       # HTML 输出规范
-    ├── methods/                           # 方法卡
-    ├── risks/                             # 误用边界与红线
-    ├── routing/                           # 输出路由
-    └── scenarios/                         # 场景入口
+├── references/
+│   ├── categories/                        # 问题分类
+│   ├── clarification/                     # 澄清与重述
+│   ├── html-output/                       # HTML 输出规范
+│   ├── methods/                           # 方法卡
+│   ├── risks/                             # 误用边界与红线
+│   ├── routing/                           # 输出路由
+│   └── scenarios/                         # 场景入口
+└── scripts/
+    └── quick_validate.py                  # 本地 UTF-8 安全校验脚本
 ```
 
 
