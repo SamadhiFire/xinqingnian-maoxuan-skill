@@ -1,0 +1,18 @@
+# Internal working materials that are not needed by end users
+source-texts/
+distill/
+
+# Local generated outputs
+outputs/
+reports/
+tmp/
+temp/
+*.log
+
+# Editor / OS files
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini

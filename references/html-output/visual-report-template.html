@@ -1,0 +1,1966 @@
+﻿<!DOCTYPE html>
+<!--
+  默认做法：先复制本模板到目标输出文件，再替换占位内容、删除不需要的按需模块。
+  允许编辑：标题、正文、日期、元信息、关系图文案、按需模块保留或删除。
+  默认不要动：:root 视觉变量、主要 class/ID、响应式规则、关系图 SVG 壳子、graph-dialog 交互脚本。
+  只有用户明确要求换风格时，才重做整套视觉；交付前删掉所有 [] 占位文字与“可删”提示。
+  不要直接在 references/html-output/ 里把本模板当最终用户报告提交。
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>毛选方法分析报告模板</title>
+  <style>
+    :root {
+      --red-900: #560606;
+      --red-800: #7a0a07;
+      --red-700: #97100c;
+      --red-600: #b81611;
+      --red-500: #d52416;
+      --gold-300: #f6ddaa;
+      --gold-400: #e5c27a;
+      --gold-500: #c99745;
+      --paper-100: #f7efde;
+      --paper-200: #f2e5cb;
+      --paper-300: #ead7b2;
+      --ink-900: #351610;
+      --ink-700: #623126;
+      --ink-500: #7a5347;
+      --line-strong: rgba(122, 10, 7, 0.28);
+      --line-soft: rgba(122, 10, 7, 0.14);
+      --shadow-lg: 0 24px 60px rgba(44, 7, 4, 0.22);
+      --shadow-md: 0 12px 28px rgba(44, 7, 4, 0.14);
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+      --page-width: 1360px;
+      --display: "STZhongsong", "Songti SC", "STSong", "SimSun", serif;
+      --body: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--body);
+      color: var(--ink-900);
+      line-height: 1.7;
+      background:
+        radial-gradient(circle at top center, rgba(255, 214, 133, 0.18), transparent 22%),
+        linear-gradient(180deg, #8b0907 0%, #c21410 18%, #cb1a12 52%, #980c0a 100%);
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background:
+        linear-gradient(90deg, rgba(255, 232, 180, 0.045) 0, rgba(255, 232, 180, 0) 14%, rgba(255, 232, 180, 0.03) 28%, rgba(255, 232, 180, 0) 43%, rgba(255, 232, 180, 0.03) 61%, rgba(255, 232, 180, 0) 78%, rgba(255, 232, 180, 0.04) 100%),
+        repeating-linear-gradient(135deg, rgba(255, 220, 170, 0.028) 0, rgba(255, 220, 170, 0.028) 2px, transparent 2px, transparent 8px);
+      mix-blend-mode: screen;
+      opacity: 0.52;
+    }
+
+    body::after {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 248, 222, 0.08), transparent 26%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.08) 100%);
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: var(--page-width);
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    .cover,
+    .section,
+    .closing {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cover {
+      border: 1px solid rgba(255, 226, 170, 0.26);
+      background:
+        radial-gradient(circle at 50% -12%, rgba(255, 229, 173, 0.26), transparent 32%),
+        linear-gradient(180deg, rgba(143, 8, 8, 0.76), rgba(103, 4, 4, 0.92)),
+        linear-gradient(180deg, var(--red-700), var(--red-900));
+      padding: 24px 28px 188px;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 226, 170, 0.2);
+      border-radius: calc(var(--radius-lg) - 6px);
+      pointer-events: none;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      left: -4%;
+      right: -4%;
+      bottom: -16px;
+      height: 156px;
+      background:
+        linear-gradient(180deg, rgba(255, 94, 61, 0.65), rgba(184, 7, 7, 0.96)),
+        linear-gradient(180deg, rgba(255, 220, 165, 0.12), rgba(255, 220, 165, 0));
+      clip-path: polygon(0 84%, 11% 69%, 24% 78%, 37% 61%, 50% 73%, 63% 56%, 77% 72%, 89% 62%, 100% 78%, 100% 100%, 0 100%);
+      opacity: 0.98;
+    }
+
+    .cover-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 223, 173, 0.18);
+    }
+
+    .mark,
+    .section-chip,
+    .mini-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(248, 223, 170, 0.44);
+      background: rgba(107, 5, 5, 0.22);
+      color: var(--gold-300);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .mark::before,
+    .section-chip::before,
+    .mini-tag::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: linear-gradient(180deg, #fff5d8, #e9c271 78%);
+      border-radius: 2px;
+      box-shadow: 0 0 0 2px rgba(255, 223, 171, 0.12);
+    }
+
+    .edition {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 223, 173, 0.48);
+      color: var(--gold-300);
+      background: linear-gradient(180deg, rgba(162, 11, 11, 0.42), rgba(102, 5, 5, 0.18));
+      font-family: var(--display);
+      font-size: 14px;
+      letter-spacing: 0.12em;
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.24fr) minmax(320px, 0.76fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .cover-kicker {
+      margin: 0 0 14px;
+      color: rgba(255, 229, 183, 0.92);
+      font-size: 14px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 700;
+      line-height: 1.16;
+    }
+
+    h1 {
+      font-size: clamp(46px, 6vw, 82px);
+      color: var(--gold-300);
+      letter-spacing: 0.04em;
+      text-shadow: 0 8px 18px rgba(59, 4, 3, 0.28);
+    }
+
+    .cover-summary {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: rgba(255, 236, 209, 0.92);
+      font-size: 18px;
+    }
+
+    .summary-banner {
+      margin-top: 18px;
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 224, 171, 0.42);
+      background: linear-gradient(180deg, rgba(251, 236, 198, 0.96), rgba(239, 206, 138, 0.96));
+      color: var(--red-800);
+      font-family: var(--display);
+      font-size: clamp(22px, 2vw, 32px);
+      letter-spacing: 0.08em;
+      box-shadow: inset 0 -6px 18px rgba(201, 151, 69, 0.18);
+      max-width: 900px;
+    }
+
+    .meta-panel {
+      position: relative;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 227, 171, 0.42);
+      background: linear-gradient(180deg, rgba(251, 246, 232, 0.96), rgba(241, 229, 203, 0.95));
+      box-shadow: inset 0 0 0 1px rgba(201, 151, 69, 0.14);
+    }
+
+    .meta-panel::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(201, 151, 69, 0.2);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .meta-grid {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .meta-row {
+      display: grid;
+      gap: 5px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(122, 10, 7, 0.18);
+    }
+
+    .meta-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    dt {
+      margin: 0;
+      color: var(--red-700);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    dd {
+      margin: 0;
+      color: var(--ink-900);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .skyline {
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      bottom: 82px;
+      height: 104px;
+      opacity: 0.9;
+      background: linear-gradient(180deg, rgba(255, 224, 168, 0.18), rgba(255, 224, 168, 0.36));
+      clip-path: polygon(
+        0% 100%, 0% 68%, 5% 68%, 5% 42%, 8% 42%, 8% 67%, 12% 67%, 12% 22%, 15% 22%, 15% 59%,
+        20% 59%, 20% 40%, 24% 40%, 24% 74%, 29% 74%, 29% 50%, 34% 50%, 34% 28%, 39% 28%, 39% 64%,
+        44% 64%, 44% 36%, 49% 36%, 49% 78%, 54% 78%, 54% 24%, 59% 24%, 59% 60%, 64% 60%, 64% 34%,
+        69% 34%, 69% 76%, 75% 76%, 75% 26%, 81% 26%, 81% 62%, 87% 62%, 87% 38%, 93% 38%, 93% 70%, 100% 70%, 100% 100%
+      );
+      pointer-events: none;
+    }
+
+    .page-stack {
+      display: grid;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .section,
+    .closing {
+      background: linear-gradient(180deg, rgba(248, 238, 216, 0.985), rgba(241, 228, 198, 0.975));
+      border: 1px solid rgba(233, 203, 145, 0.62);
+      padding: 24px 26px 28px;
+    }
+
+    .section::before,
+    .closing::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: calc(var(--radius-lg) - 7px);
+      border: 1px solid rgba(201, 151, 69, 0.18);
+      pointer-events: none;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(122, 10, 7, 0.12);
+    }
+
+    .section-index {
+      margin: 0 0 6px;
+      color: var(--red-700);
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(30px, 3vw, 46px);
+      color: var(--red-900);
+      letter-spacing: 0.05em;
+    }
+
+    .section-note {
+      margin: 8px 0 0;
+      color: var(--ink-700);
+      font-size: 15px;
+      max-width: 860px;
+    }
+
+    .section-chip {
+      color: var(--red-700);
+      background: rgba(255, 248, 232, 0.92);
+      border-color: rgba(201, 151, 69, 0.28);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .info-card,
+    .route-card,
+    .profile-card,
+    .panel-card,
+    .timeline-card,
+    .comparison-card,
+    .aside-card {
+      min-height: 100%;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(122, 10, 7, 0.1);
+      background: linear-gradient(180deg, rgba(255, 252, 244, 0.96), rgba(246, 236, 214, 0.92));
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-label {
+      margin: 0 0 10px;
+      color: var(--red-700);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .card-value,
+    .info-card p,
+    .route-card p,
+    .profile-card p,
+    .panel-card p,
+    .timeline-card p,
+    .comparison-card p,
+    .aside-card p {
+      margin: 0;
+      color: var(--ink-700);
+      font-size: 16px;
+    }
+
+    .route-banner {
+      margin-bottom: 16px;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(201, 151, 69, 0.34);
+      background: linear-gradient(180deg, rgba(255, 236, 196, 0.98), rgba(247, 215, 155, 0.96));
+      box-shadow: inset 0 -6px 16px rgba(201, 151, 69, 0.16);
+    }
+
+    .route-banner h3,
+    .graph-panel-title,
+    .aside-card h3,
+    .timeline-card h3,
+    .comparison-card h3,
+    .profile-card h3 {
+      margin-bottom: 10px;
+      color: var(--red-800);
+      font-size: 24px;
+      letter-spacing: 0.04em;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .step-card {
+      position: relative;
+      padding: 18px 18px 18px 56px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(122, 10, 7, 0.1);
+      background: linear-gradient(180deg, rgba(255, 252, 244, 0.96), rgba(246, 236, 214, 0.92));
+      box-shadow: var(--shadow-md);
+    }
+
+    .step-no {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(180deg, var(--red-700), var(--red-900));
+      color: #fff2cf;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 8px 14px rgba(122, 10, 7, 0.18);
+    }
+
+    .step-card h4 {
+      margin-bottom: 8px;
+      color: var(--red-900);
+      font-size: 20px;
+    }
+
+    .timeline-list {
+      display: grid;
+      gap: 14px;
+      position: relative;
+    }
+
+    .timeline-list::before {
+      content: "";
+      position: absolute;
+      left: 22px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(122, 10, 7, 0.56), rgba(201, 151, 69, 0.2));
+    }
+
+    .timeline-card {
+      position: relative;
+      padding-left: 64px;
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 22px;
+      width: 18px;
+      height: 18px;
+      background: linear-gradient(180deg, var(--gold-300), var(--gold-500));
+      border: 3px solid rgba(255, 250, 238, 0.98);
+      border-radius: 4px;
+      box-shadow: 0 0 0 2px rgba(122, 10, 7, 0.14);
+    }
+
+    .timeline-meta {
+      margin: 0 0 8px;
+      color: var(--red-700);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 16px;
+      margin-top: 14px;
+    }
+
+    .profile-grid div {
+      padding-top: 10px;
+      border-top: 1px dashed rgba(122, 10, 7, 0.14);
+    }
+
+    .profile-grid dt {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+    }
+
+    .profile-grid dd {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink-700);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .comparison-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .comparison-line {
+      display: grid;
+      gap: 4px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(122, 10, 7, 0.14);
+    }
+
+    .comparison-line:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .comparison-line strong {
+      color: var(--red-700);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+
+    .relation-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .graph-panel {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 226, 169, 0.28);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 221, 150, 0.16), transparent 30%),
+        linear-gradient(180deg, rgba(104, 7, 7, 0.98), rgba(66, 2, 2, 0.98));
+      box-shadow: inset 0 0 0 1px rgba(255, 226, 169, 0.08);
+    }
+
+    .graph-panel-title {
+      color: var(--gold-300);
+    }
+
+    .graph-panel-note {
+      margin: 0 0 14px;
+      color: rgba(255, 238, 209, 0.84);
+      font-size: 15px;
+    }
+
+    .graph-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .graph-board {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 227, 171, 0.18);
+      background:
+        radial-gradient(circle at 50% 42%, rgba(255, 230, 182, 0.08), transparent 32%),
+        linear-gradient(180deg, rgba(80, 0, 0, 0.86), rgba(40, 0, 0, 0.92));
+      min-height: 500px;
+    }
+
+    .graph-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .graph-ring {
+      fill: none;
+      stroke: rgba(255, 224, 171, 0.08);
+      stroke-width: 1.6;
+      stroke-dasharray: 10 10;
+    }
+
+    .graph-edge {
+      fill: none;
+      stroke-width: 3;
+      stroke-linecap: round;
+      opacity: 0.96;
+    }
+
+    .graph-edge-hit {
+      fill: none;
+      stroke: transparent;
+      stroke-width: 24;
+      cursor: pointer;
+    }
+
+    .edge-support {
+      stroke: #f2d08e;
+    }
+
+    .edge-conflict {
+      stroke: #ff9072;
+    }
+
+    .edge-control {
+      stroke: #ffd9a7;
+      stroke-dasharray: 10 8;
+    }
+
+    .edge-block {
+      stroke: #ff715d;
+      stroke-dasharray: 6 9;
+    }
+
+    .graph-edge-label {
+      fill: #f7e1b8;
+      font-size: 15px;
+      font-family: var(--body);
+      letter-spacing: 0.03em;
+    }
+
+    .graph-node-title {
+      fill: #fff2d2;
+      font-size: 22px;
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-anchor: middle;
+    }
+
+    .graph-node-sub {
+      fill: rgba(255, 239, 214, 0.84);
+      font-size: 13px;
+      font-family: var(--body);
+      letter-spacing: 0.06em;
+      text-anchor: middle;
+    }
+
+    .graph-hotspot {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .graph-shape {
+      transition: transform 180ms ease, filter 180ms ease, stroke-width 180ms ease, opacity 180ms ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .graph-hotspot:hover .graph-shape,
+    .graph-hotspot:focus-visible .graph-shape {
+      filter: brightness(1.08);
+      transform: scale(1.02);
+    }
+
+    .graph-node-core .graph-shape {
+      fill: url(#coreGlow);
+      stroke: rgba(255, 237, 205, 0.62);
+      stroke-width: 2;
+      filter: drop-shadow(0 10px 22px rgba(255, 180, 118, 0.18));
+    }
+
+    .graph-node-person .graph-shape,
+    .graph-node-event .graph-shape {
+      stroke: rgba(255, 237, 205, 0.56);
+      stroke-width: 2;
+    }
+
+    .graph-node-person .graph-shape {
+      fill: rgba(190, 21, 16, 0.9);
+    }
+
+    .graph-node-event .graph-shape {
+      fill: rgba(157, 12, 9, 0.92);
+    }
+
+    .graph-node-org .graph-shape,
+    .graph-node-resource .graph-shape {
+      stroke: rgba(255, 237, 205, 0.54);
+      stroke-width: 2;
+      rx: 10;
+      ry: 10;
+    }
+
+    .graph-node-org .graph-shape {
+      fill: rgba(133, 16, 11, 0.92);
+    }
+
+    .graph-node-resource .graph-shape {
+      fill: rgba(95, 8, 6, 0.96);
+    }
+
+    .relation-aside {
+      display: grid;
+      gap: 16px;
+    }
+
+    .graph-index {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .graph-index li {
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(122, 10, 7, 0.1);
+      background: linear-gradient(180deg, rgba(255, 252, 244, 0.96), rgba(246, 236, 214, 0.92));
+    }
+
+    .graph-index strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--red-700);
+      font-size: 15px;
+    }
+
+    .graph-index span,
+    .bullet-list li,
+    .citation-item p {
+      color: var(--ink-700);
+      font-size: 15px;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .bullet-list li::marker {
+      color: var(--red-700);
+    }
+
+    .report-table-shell {
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(122, 10, 7, 0.14);
+      box-shadow: var(--shadow-md);
+      background: linear-gradient(180deg, rgba(255, 252, 244, 0.98), rgba(246, 236, 214, 0.94));
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .report-table th,
+    .report-table td {
+      padding: 14px 16px;
+      vertical-align: top;
+      text-align: left;
+      border-bottom: 1px solid rgba(122, 10, 7, 0.1);
+      border-right: 1px solid rgba(122, 10, 7, 0.08);
+      word-break: break-word;
+    }
+
+    .report-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .report-table th:last-child,
+    .report-table td:last-child {
+      border-right: 0;
+    }
+
+    .report-table th {
+      color: var(--red-800);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      background: linear-gradient(180deg, rgba(255, 240, 205, 0.98), rgba(246, 225, 181, 0.94));
+    }
+
+    .table-note {
+      margin-top: 10px;
+      color: var(--ink-700);
+      font-size: 14px;
+    }
+
+    .citation-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: citation;
+    }
+
+    .citation-item {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 14px;
+      padding: 14px 0 0;
+      border-top: 1px solid rgba(122, 10, 7, 0.14);
+    }
+
+    .citation-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .citation-item::before {
+      counter-increment: citation;
+      content: "[" counter(citation) "]";
+      color: var(--red-700);
+      font-family: var(--display);
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .citation-item h3 {
+      margin-bottom: 4px;
+      color: var(--red-800);
+      font-size: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .closing {
+      padding: 18px 22px;
+      background: linear-gradient(180deg, rgba(255, 241, 212, 0.98), rgba(244, 225, 188, 0.98));
+    }
+
+    .closing p {
+      margin: 0;
+      color: var(--ink-700);
+      font-size: 15px;
+    }
+
+    .closing strong {
+      color: var(--red-700);
+    }
+
+    .dialog-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      background: rgba(30, 6, 4, 0.55);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease;
+    }
+
+    .dialog-backdrop.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .graph-dialog {
+      position: fixed;
+      right: 26px;
+      bottom: 26px;
+      z-index: 21;
+      width: min(420px, calc(100vw - 32px));
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(233, 203, 145, 0.44);
+      background: linear-gradient(180deg, rgba(248, 238, 216, 0.995), rgba(241, 228, 198, 0.99));
+      box-shadow: 0 24px 50px rgba(32, 6, 4, 0.26);
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+      overflow: hidden;
+    }
+
+    .graph-dialog.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dialog-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 18px 12px;
+      border-bottom: 1px solid rgba(122, 10, 7, 0.1);
+      background: linear-gradient(180deg, rgba(255, 241, 214, 0.96), rgba(248, 231, 191, 0.96));
+    }
+
+    .dialog-kicker {
+      margin: 0 0 6px;
+      color: var(--red-700);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .dialog-title {
+      font-size: 24px;
+      color: var(--red-900);
+    }
+
+    .dialog-close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(122, 10, 7, 0.14);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 251, 242, 0.92);
+      color: var(--red-700);
+      cursor: pointer;
+    }
+
+    .dialog-body {
+      display: grid;
+      gap: 14px;
+      padding: 16px 18px 18px;
+    }
+
+    .dialog-summary {
+      margin: 0;
+      color: var(--ink-700);
+      font-size: 15px;
+    }
+
+    .dialog-points {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .dialog-points li::marker {
+      color: var(--red-700);
+    }
+
+    @media (max-width: 1120px) {
+      .cover-grid,
+      .grid-4,
+      .grid-3,
+      .comparison-grid,
+      .step-grid,
+      .relation-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 780px) {
+      .page {
+        padding: 14px 10px 40px;
+      }
+
+      .cover,
+      .section,
+      .closing {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .cover {
+        padding-bottom: 160px;
+      }
+
+      .cover-topbar,
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cover-grid,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .comparison-grid,
+      .step-grid,
+      .relation-layout,
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .report-table,
+      .report-table thead,
+      .report-table tbody,
+      .report-table tr,
+      .report-table th,
+      .report-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .report-table thead {
+        display: none;
+      }
+
+      .report-table td {
+        border-right: 0;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .skyline {
+        left: 20px;
+        right: 20px;
+        bottom: 70px;
+        height: 86px;
+      }
+
+      .graph-dialog {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="cover">
+      <div class="cover-topbar">
+        <span class="mark">Mao Method Visual Report</span>
+        <span class="edition">专题分析模板</span>
+      </div>
+
+      <div class="cover-grid">
+        <section>
+          <p class="cover-kicker">专题研判 / 结构判断 / 路线设计</p>
+          <h1>[案例标题]</h1>
+          <p class="cover-summary">[一句话案例摘要：用一句话压住问题场景、当前卡点与本报告要解决的核心判断。]</p>
+          <div class="summary-banner">[当前推荐路线 / 核心结论一句话]</div>
+        </section>
+
+        <aside class="meta-panel">
+          <dl class="meta-grid">
+            <div class="meta-row">
+              <dt>生成日期</dt>
+              <dd>[YYYY-MM-DD]</dd>
+            </div>
+            <div class="meta-row">
+              <dt>复杂度</dt>
+              <dd>[L1 / L2 / L3 / L4]</dd>
+            </div>
+            <div class="meta-row">
+              <dt>主场景</dt>
+              <dd>[工作推进 / 关系边界 / 学习成长 / 自我管理 / 生活决策 / 团队治理]</dd>
+            </div>
+            <div class="meta-row">
+              <dt>当前阶段</dt>
+              <dd>[推进期 / 转段期 / 收口期 / 接管期]</dd>
+            </div>
+            <div class="meta-row">
+              <dt>服务对象</dt>
+              <dd>[这套路线首先要对谁负责。]</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+
+      <div class="skyline" aria-hidden="true"></div>
+    </header>
+
+    <div class="page-stack">
+            <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">I / Fixed Core</p>
+            <h2>核心判断区</h2>
+            <p class="section-note">先把目标、服务对象、阶段、核心问题、控制点和当前第一要务压稳，后面的模块都围绕这一层展开。</p>
+          </div>
+          <span class="section-chip">固定骨架</span>
+        </div>
+        <div class="grid grid-3">
+          <article class="info-card">
+            <p class="card-label">用户目标</p>
+            <p class="card-value">[这次真正想推进的结果。]</p>
+          </article>
+          <article class="info-card">
+            <p class="card-label">服务对象</p>
+            <p class="card-value">[这套判断首先要对谁负责、替谁解决问题。]</p>
+          </article>
+          <article class="info-card">
+            <p class="card-label">当前阶段</p>
+            <p class="card-value">[当前处于什么阶段，旧办法为什么失灵。]</p>
+          </article>
+          <article class="info-card">
+            <p class="card-label">核心问题</p>
+            <p class="card-value">[当前最限制结果的主导问题。]</p>
+          </article>
+          <article class="info-card">
+            <p class="card-label">关键控制点</p>
+            <p class="card-value">[当前谁握着真正会改写结果的信息、资源、审批、口径或节奏。]</p>
+          </article>
+          <article class="info-card">
+            <p class="card-label">当前第一要务</p>
+            <p class="card-value">[如果现在只能先解决一件事，它是什么。]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">II / Relation Graph</p>
+            <h2>关系图模块</h2>
+            <p class="section-note">当局面真正难在“谁影响谁、谁卡谁、谁依赖谁”时，先把结构图画清，再进入路线判断。</p>
+          </div>
+          <span class="section-chip">复杂关系优先</span>
+        </div>
+
+        <div class="relation-layout">
+          <div class="graph-panel">
+            <h3 class="graph-panel-title">人物与事项关联图</h3>
+            <p class="graph-panel-note">图里只保留关键节点和关键关系。节点、关系线都可以点击，点击后会弹出更细的信息层。</p>
+            <div class="graph-toolbar">
+              <span class="mini-tag">节点可点</span>
+              <span class="mini-tag">关系线可点</span>
+              <span class="mini-tag">先看中心点</span>
+            </div>
+            <div class="graph-board">
+              <svg class="graph-svg" viewBox="0 0 920 540" role="img" aria-label="复杂人物与事项关系图模板">
+                <defs>
+                  <radialGradient id="coreGlow" cx="50%" cy="50%" r="70%">
+                    <stop offset="0%" stop-color="#f7ddb0" />
+                    <stop offset="62%" stop-color="#dca657" />
+                    <stop offset="100%" stop-color="#a31810" />
+                  </radialGradient>
+                  <marker id="arrow-support" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L9,3 z" fill="#f2d08e"></path>
+                  </marker>
+                  <marker id="arrow-conflict" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L9,3 z" fill="#ff9072"></path>
+                  </marker>
+                </defs>
+
+                <circle class="graph-ring" cx="460" cy="260" r="144"></circle>
+                <circle class="graph-ring" cx="460" cy="260" r="226"></circle>
+
+                <g class="graph-hotspot" tabindex="0" role="button" aria-label="查看支持关系详情" data-kind="关系线" data-title="[人物 A -> 中心节点]" data-summary="[这是当前最重要的支持 / 背书关系之一。]" data-points="[它提供推动力、授权或正当性。]|[如果这一条关系断掉，中心节点会明显失去推进条件。]">
+                  <path class="graph-edge-hit" d="M460 260 C360 205, 300 175, 220 150"></path>
+                  <path class="graph-edge edge-support graph-shape" marker-end="url(#arrow-support)" d="M460 260 C360 205, 300 175, 220 150"></path>
+                  <text class="graph-edge-label" x="294" y="170">[支持 / 影响]</text>
+                </g>
+
+                <g class="graph-hotspot" tabindex="0" role="button" aria-label="查看冲突关系详情" data-kind="关系线" data-title="[组织 B -> 中心节点]" data-summary="[这是当前主要的制衡 / 冲突关系。]" data-points="[它控制资源、规则或节奏。]|[如果不先处理这条关系，后续路线容易被卡住。]">
+                  <path class="graph-edge-hit" d="M460 260 C585 214, 650 180, 718 158"></path>
+                  <path class="graph-edge edge-conflict graph-shape" marker-end="url(#arrow-conflict)" d="M460 260 C585 214, 650 180, 718 158"></path>
+                  <text class="graph-edge-label" x="606" y="170">[冲突 / 制衡]</text>
+                </g>
+
+                <g class="graph-hotspot" tabindex="0" role="button" aria-label="查看依赖关系详情" data-kind="关系线" data-title="[中心节点 -> 事项 C]" data-summary="[这是一条执行依赖链。]" data-points="[中心判断是否成立，要看这件事能不能真正动起来。]|[它往往决定路线能否从判断转成动作。]">
+                  <path class="graph-edge-hit" d="M460 260 C392 340, 335 380, 260 412"></path>
+                  <path class="graph-edge edge-control graph-shape" marker-end="url(#arrow-support)" d="M460 260 C392 340, 335 380, 260 412"></path>
+                  <text class="graph-edge-label" x="294" y="394">[依赖 / 协调]</text>
+                </g>
+
+                <g class="graph-hotspot" tabindex="0" role="button" aria-label="查看阻断关系详情" data-kind="关系线" data-title="[资源 D -> 中心节点]" data-summary="[这是一条当前最容易被忽视的阻断线。]" data-points="[它代表资源缺口、制度限制或时间约束。]|[如果不先改路线或调配资源，这条线会持续拖慢推进。]">
+                  <path class="graph-edge-hit" d="M460 260 C560 333, 642 365, 728 398"></path>
+                  <path class="graph-edge edge-block graph-shape" marker-end="url(#arrow-conflict)" d="M460 260 C560 333, 642 365, 728 398"></path>
+                  <text class="graph-edge-label" x="614" y="404">[阻断 / 牵制]</text>
+                </g>
+
+                <g class="graph-hotspot graph-node-core" tabindex="0" role="button" aria-label="查看中心节点详情" data-kind="核心节点" data-title="[中心节点]" data-summary="[当前主矛盾 / 核心事项。]" data-points="[这是当前最应先看清的中心点。]|[所有支持、冲突、依赖和阻断都围绕它展开。]">
+                  <circle class="graph-shape" cx="460" cy="260" r="86"></circle>
+                  <text class="graph-node-title" x="460" y="246">[中心节点]</text>
+                  <text class="graph-node-sub" x="460" y="275">[当前主矛盾 / 核心事项]</text>
+                </g>
+
+                <g class="graph-hotspot graph-node-person" tabindex="0" role="button" aria-label="查看人物 A 详情" data-kind="人物节点" data-title="[人物 A]" data-summary="[关键推动者 / 背书者。]" data-points="[他在局面中真正重要的不是职位，而是推动力。]|[需要判断他是在稳定支持、试探观望，还是已经开始摇摆。]">
+                  <circle class="graph-shape" cx="220" cy="150" r="60"></circle>
+                  <text class="graph-node-title" x="220" y="145">[人物 A]</text>
+                  <text class="graph-node-sub" x="220" y="171">[关键推动者]</text>
+                </g>
+
+                <g class="graph-hotspot graph-node-org" tabindex="0" role="button" aria-label="查看组织 B 详情" data-kind="组织节点" data-title="[组织 / 团队 B]" data-summary="[资源控制点 / 制衡点。]" data-points="[它决定规则、资源、授权或流程。]|[与它的关系处理方式，决定路线是顺推还是绕行。]">
+                  <rect class="graph-shape" x="624" y="108" width="188" height="96"></rect>
+                  <text class="graph-node-title" x="718" y="151">[组织 / 团队 B]</text>
+                  <text class="graph-node-sub" x="718" y="178">[资源控制点]</text>
+                </g>
+
+                <g class="graph-hotspot graph-node-event" tabindex="0" role="button" aria-label="查看事项 C 详情" data-kind="事项节点" data-title="[事项 C]" data-summary="[执行入口 / 关键动作承接点。]" data-points="[它是把分析变成行动的第一道入口。]|[如果它迟迟不动，路线看起来再完整也容易悬空。]">
+                  <circle class="graph-shape" cx="260" cy="412" r="60"></circle>
+                  <text class="graph-node-title" x="260" y="406">[事项 C]</text>
+                  <text class="graph-node-sub" x="260" y="433">[执行入口]</text>
+                </g>
+
+                <g class="graph-hotspot graph-node-resource" tabindex="0" role="button" aria-label="查看资源 D 详情" data-kind="资源节点" data-title="[资源 / 约束 D]" data-summary="[当前卡点来源。]" data-points="[它代表时间、预算、权限或承受力的真实边界。]|[不是所有路线都能穿过这道约束。]">
+                  <rect class="graph-shape" x="618" y="352" width="220" height="96"></rect>
+                  <text class="graph-node-title" x="728" y="394">[资源 / 约束 D]</text>
+                  <text class="graph-node-sub" x="728" y="422">[当前卡点来源]</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <aside class="relation-aside">
+            <article class="aside-card">
+              <h3>使用方式</h3>
+              <ul class="bullet-list">
+                <li>先看中心节点，再看四条关键关系线。</li>
+                <li>优先保留 5 到 9 个关键节点，不要把噪音也塞进图里。</li>
+                <li>点击节点或关系线，可以展开更细的结构信息。</li>
+              </ul>
+            </article>
+
+            <article class="aside-card">
+              <h3>关系索引</h3>
+              <ul class="graph-index">
+                <li>
+                  <strong>[人物 A -> 中心节点]</strong>
+                  <span>[推动、授权、关键背书。]</span>
+                </li>
+                <li>
+                  <strong>[组织 B -> 中心节点]</strong>
+                  <span>[资源支持、规则约束或利益牵制。]</span>
+                </li>
+                <li>
+                  <strong>[中心节点 -> 事项 C]</strong>
+                  <span>[执行依赖、动作承接或反馈传导。]</span>
+                </li>
+                <li>
+                  <strong>[资源 D -> 中心节点]</strong>
+                  <span>[资源缺口、时间边界或制度阻断。]</span>
+                </li>
+              </ul>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+            <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">III / Main Route</p>
+            <h2>建议路线区</h2>
+            <p class="section-note">先定路线，再写前提、支点和底盘，最后压成关键动作。这里负责当前主路线，不负责路线大全。</p>
+          </div>
+          <span class="section-chip">固定骨架</span>
+        </div>
+
+        <div class="route-banner">
+          <h3>[当前推荐路线名称]</h3>
+          <p>[一句话说明为什么当前最应走这条路线，而不是别的路线。]</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="route-card">
+            <p class="card-label">成立前提</p>
+            <p>[前提一] [前提二] [前提三]</p>
+          </article>
+          <article class="route-card">
+            <p class="card-label">当前支点</p>
+            <p>[当前依靠哪一个可守、可长、可供给的支点。]</p>
+          </article>
+          <article class="route-card">
+            <p class="card-label">底盘供给</p>
+            <p>[后台供给、基础盘和承受能力由什么来撑。]</p>
+          </article>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:16px;">
+          <article class="route-card">
+            <p class="card-label">路线说明</p>
+            <p>[这条路线要先稳住什么、再打开什么、最后形成什么结果。]</p>
+          </article>
+          <article class="route-card">
+            <p class="card-label">政策 / 规则重写点</p>
+            <p>[旧规则哪里失效，当前要改写哪一条规则、口径、顺序或接口。]</p>
+          </article>
+        </div>
+
+        <div class="step-grid">
+          <article class="step-card">
+            <span class="step-no">1</span>
+            <h4>[动作一]</h4>
+            <p>[第一步先做什么。]</p>
+          </article>
+          <article class="step-card">
+            <span class="step-no">2</span>
+            <h4>[动作二]</h4>
+            <p>[第二步要接住什么。]</p>
+          </article>
+          <article class="step-card">
+            <span class="step-no">3</span>
+            <h4>[动作三]</h4>
+            <p>[第三步如何形成闭环。]</p>
+          </article>
+        </div>
+      </section>
+
+            <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">IV / Immediate Actions</p>
+            <h2>下一步行动区</h2>
+            <p class="section-note">把近期动作、观察点和风险提醒压成闭环，不在这里展开长期执行计划。</p>
+          </div>
+          <span class="section-chip">固定骨架</span>
+        </div>
+        <div class="grid grid-3">
+          <article class="info-card">
+            <p class="card-label">近期动作</p>
+            <p>[24 小时 / 7 天内先做什么。]</p>
+          </article>
+          <article class="info-card">
+            <p class="card-label">观察点</p>
+            <p>[哪些信号说明判断成立，哪些信号说明需要回退。]</p>
+          </article>
+          <article class="info-card">
+            <p class="card-label">风险提醒</p>
+            <p>[最容易误用的地方，最不该提前做的动作。]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">V / Evidence Chain</p>
+            <h2>证据链模块</h2>
+            <p class="section-note">判断依赖事实链、程序链、授权链时保留。这里负责说明“为什么这样判断”，不是再讲一遍情绪感觉。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="grid grid-2">
+          <article class="panel-card">
+            <p class="card-label">关键结论</p>
+            <p>[当前最关键的结构性判断。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">当前缺口</p>
+            <p>[还没确认清楚、足以改写结论的证据缺口是什么。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">证据一</p>
+            <p>[时间点 / 来源 / 对象 / 事实。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">证据二</p>
+            <p>[时间点 / 来源 / 对象 / 事实。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">证据三</p>
+            <p>[时间点 / 来源 / 对象 / 事实。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">最易被推翻点</p>
+            <p>[哪一条证据最脆弱，后续最该继续查什么。]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">VI / Control Points</p>
+            <h2>控制点 / 权力点分布表</h2>
+            <p class="section-note">当纸面关系和现实控制点不一致时保留。它负责把关键控制点分布写清，不重复证据链模块。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="report-table-shell">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>控制点</th>
+                <th>名义归属</th>
+                <th>现实掌握方</th>
+                <th>当前状态</th>
+                <th>对局面的影响</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[客户 / 对外接口]</td>
+                <td>[名义归属]</td>
+                <td>[现实掌握方]</td>
+                <td>[稳定 / 分叉 / 模糊]</td>
+                <td>[它如何改变推进或判断。]</td>
+              </tr>
+              <tr>
+                <td>[预算 / 资源调度]</td>
+                <td>[名义归属]</td>
+                <td>[现实掌握方]</td>
+                <td>[稳定 / 分叉 / 模糊]</td>
+                <td>[它如何改变推进或判断。]</td>
+              </tr>
+              <tr>
+                <td>[审批 / 规则口径]</td>
+                <td>[名义归属]</td>
+                <td>[现实掌握方]</td>
+                <td>[稳定 / 分叉 / 模糊]</td>
+                <td>[它如何改变推进或判断。]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">[如控制点已高度集中，可减少行数；如同时出现旧容器与新容器，可增加对照行。]</p>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">VII / People Details</p>
+            <h2>人物与关系清单模块</h2>
+            <p class="section-note">只看关系图还不够，需要逐项补清角色、诉求、态度和边界时保留。这一块是补细节，不是重复画图。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="grid grid-2">
+          <article class="profile-card">
+            <h3>[人物 A]</h3>
+            <p>[角色说明。]</p>
+            <dl class="profile-grid">
+              <div>
+                <dt>诉求</dt>
+                <dd>[在意点]</dd>
+              </div>
+              <div>
+                <dt>态度</dt>
+                <dd>[当前态度]</dd>
+              </div>
+              <div>
+                <dt>影响力</dt>
+                <dd>[高 / 中 / 低]</dd>
+              </div>
+              <div>
+                <dt>关系</dt>
+                <dd>[合作 / 摇摆 / 冲突]</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="profile-card">
+            <h3>[人物 B]</h3>
+            <p>[角色说明。]</p>
+            <dl class="profile-grid">
+              <div>
+                <dt>诉求</dt>
+                <dd>[在意点]</dd>
+              </div>
+              <div>
+                <dt>依赖</dt>
+                <dd>[关键依赖]</dd>
+              </div>
+              <div>
+                <dt>误解</dt>
+                <dd>[主要误解]</dd>
+              </div>
+              <div>
+                <dt>边界</dt>
+                <dd>[边界判断]</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">VIII / Timeline</p>
+            <h2>时间线模块</h2>
+            <p class="section-note">阶段变化明显、事件顺序会影响判断时保留。重点写“它怎样改变局面”，不要只是流水账。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="timeline-list">
+          <article class="timeline-card">
+            <p class="timeline-meta">[阶段 / 时间点一]</p>
+            <h3>[发生了什么]</h3>
+            <p>[这一阶段怎样改变了局面。]</p>
+          </article>
+          <article class="timeline-card">
+            <p class="timeline-meta">[阶段 / 时间点二]</p>
+            <h3>[发生了什么]</h3>
+            <p>[这一阶段怎样改变了局面。]</p>
+          </article>
+          <article class="timeline-card">
+            <p class="timeline-meta">[阶段 / 时间点三]</p>
+            <h3>[发生了什么]</h3>
+            <p>[这一阶段怎样改变了局面。]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">IX / Structure</p>
+            <h2>结构拆解模块</h2>
+            <p class="section-note">表层问题和深层问题不同，或需要区分主次问题时保留。它负责补层次，不负责重复核心判断。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="grid grid-3">
+          <article class="panel-card">
+            <p class="card-label">核心问题</p>
+            <p>[真正定义全局的主导问题。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">次级问题</p>
+            <p>[会带来噪音或成本，但不该抢入口的问题。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">暂不优先处理</p>
+            <p>[本轮不应拉进来的部分。]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">X / Route Comparison</p>
+            <h2>路线比较模块</h2>
+            <p class="section-note">存在两条及以上可行路线时保留。这里负责比较备选，而不是把主路线再重写一遍。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="comparison-grid">
+          <article class="comparison-card">
+            <h3>[路线 A]</h3>
+            <div class="comparison-list">
+              <div class="comparison-line">
+                <strong>适用前提</strong>
+                <p>[适用前提]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>关键动作</strong>
+                <p>[关键动作]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>主要风险</strong>
+                <p>[主要风险]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>预期结果</strong>
+                <p>[预期结果]</p>
+              </div>
+            </div>
+          </article>
+          <article class="comparison-card">
+            <h3>[路线 B]</h3>
+            <div class="comparison-list">
+              <div class="comparison-line">
+                <strong>适用前提</strong>
+                <p>[适用前提]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>关键动作</strong>
+                <p>[关键动作]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>主要风险</strong>
+                <p>[主要风险]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>预期结果</strong>
+                <p>[预期结果]</p>
+              </div>
+            </div>
+          </article>
+          <article class="comparison-card">
+            <h3>[路线 C，可删]</h3>
+            <div class="comparison-list">
+              <div class="comparison-line">
+                <strong>适用前提</strong>
+                <p>[适用前提]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>关键动作</strong>
+                <p>[关键动作]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>主要风险</strong>
+                <p>[主要风险]</p>
+              </div>
+              <div class="comparison-line">
+                <strong>预期结果</strong>
+                <p>[预期结果]</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+            <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">XI / Resources</p>
+            <h2>资源与约束模块</h2>
+            <p class="section-note">资源配置、支点、底盘供给与承受能力会改变路线时保留。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="grid grid-4">
+          <article class="panel-card">
+            <p class="card-label">关键资源</p>
+            <p>[人手 / 时间 / 预算 / 组织支持]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">当前支点</p>
+            <p>[最值得经营、最能改写局面的点。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">底盘供给</p>
+            <p>[后台供给、基础盘与承受能力。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">主要风险</p>
+            <p>[资源判断错了会带来什么后果。]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">XII / Rollout Matrix</p>
+            <h2>rollout 分区矩阵</h2>
+            <p class="section-note">同一套动作不能对所有对象、区域、团队同步展开时保留。它负责说明哪里先推、哪里先稳、哪里先观察。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="grid grid-4">
+          <article class="panel-card">
+            <h3>[分区 A]</h3>
+            <p><strong>当前状态：</strong>[成熟区 / 稳定区]</p>
+            <p><strong>适用动作：</strong>[可推进动作]</p>
+            <p><strong>节奏安排：</strong>[推进节奏]</p>
+            <p><strong>风险边界：</strong>[不能踩的线]</p>
+          </article>
+          <article class="panel-card">
+            <h3>[分区 B]</h3>
+            <p><strong>当前状态：</strong>[新区 / 过渡区]</p>
+            <p><strong>适用动作：</strong>[可推进动作]</p>
+            <p><strong>节奏安排：</strong>[推进节奏]</p>
+            <p><strong>风险边界：</strong>[不能踩的线]</p>
+          </article>
+          <article class="panel-card">
+            <h3>[分区 C，可删]</h3>
+            <p><strong>当前状态：</strong>[观察区]</p>
+            <p><strong>适用动作：</strong>[可推进动作]</p>
+            <p><strong>节奏安排：</strong>[推进节奏]</p>
+            <p><strong>风险边界：</strong>[不能踩的线]</p>
+          </article>
+          <article class="panel-card">
+            <h3>[分区 D，可删]</h3>
+            <p><strong>当前状态：</strong>[接管区 / 高风险区]</p>
+            <p><strong>适用动作：</strong>[可推进动作]</p>
+            <p><strong>节奏安排：</strong>[推进节奏]</p>
+            <p><strong>风险边界：</strong>[不能踩的线]</p>
+          </article>
+        </div>
+      </section>
+
+            <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">XIII / Communication</p>
+            <h2>沟通与协商模块</h2>
+            <p class="section-note">关键突破点在表达对象、说法设计和时机安排时保留。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="grid grid-2">
+          <article class="panel-card">
+            <p class="card-label">沟通对象与目标</p>
+            <p>[对谁说，想让对方理解什么，想促成什么动作。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">核心信息与时机</p>
+            <p>[该说什么、不该说什么、什么时候说。]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">XIV / Procedure Check</p>
+            <h2>谈判底线 / 程序检查表</h2>
+            <p class="section-note">判断依赖条款、程序、授权、留痕时保留。它负责把底线和程序检查写清，不重复证据链模块。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="report-table-shell">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>检查项</th>
+                <th>当前状态</th>
+                <th>底线要求</th>
+                <th>当前缺口</th>
+                <th>触发升级 / 止损信号</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[授权是否一致]</td>
+                <td>[已确认 / 未确认]</td>
+                <td>[最少要看到什么授权事实]</td>
+                <td>[现在缺什么]</td>
+                <td>[一旦出现什么信号就必须升级处理]</td>
+              </tr>
+              <tr>
+                <td>[程序是否闭合]</td>
+                <td>[已确认 / 未确认]</td>
+                <td>[最少要走完什么顺序]</td>
+                <td>[现在缺什么]</td>
+                <td>[一旦出现什么信号就必须升级处理]</td>
+              </tr>
+              <tr>
+                <td>[条款是否留痕]</td>
+                <td>[已确认 / 未确认]</td>
+                <td>[最少要保留什么文字或记录]</td>
+                <td>[现在缺什么]</td>
+                <td>[一旦出现什么信号就必须升级处理]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+            <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">XV / Execution</p>
+            <h2>执行计划模块</h2>
+            <p class="section-note">重点在推进落地、安排节奏和反馈调整时保留。它负责拉长节奏，不重复“下一步行动区”。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="grid grid-3">
+          <article class="panel-card">
+            <p class="card-label">24 小时</p>
+            <p>[先做哪一步，先看什么信号。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">7 天</p>
+            <p>[如何推进节奏，谁来承接，怎么观察反馈。]</p>
+          </article>
+          <article class="panel-card">
+            <p class="card-label">30 天</p>
+            <p>[是否需要阶段复盘，何时回退或重判。]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">XVI / Handover Comparison</p>
+            <h2>组织换挡 / 接管前后对照表</h2>
+            <p class="section-note">重点在组织换挡、承接、接管、新旧系统转换时保留。它负责把前后差异写清，不重复控制点表。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <div class="report-table-shell">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>换挡前 / 接管前</th>
+                <th>换挡后 / 接管后</th>
+                <th>当前风险</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[目标]</td>
+                <td>[旧目标 / 旧口径]</td>
+                <td>[新目标 / 新口径]</td>
+                <td>[当前主要风险]</td>
+              </tr>
+              <tr>
+                <td>[规则 / 流程]</td>
+                <td>[旧规则 / 旧顺序]</td>
+                <td>[新规则 / 新顺序]</td>
+                <td>[当前主要风险]</td>
+              </tr>
+              <tr>
+                <td>[角色 / 控制点]</td>
+                <td>[旧角色分工]</td>
+                <td>[新角色分工]</td>
+                <td>[当前主要风险]</td>
+              </tr>
+              <tr>
+                <td>[节奏 / rollout]</td>
+                <td>[旧节奏]</td>
+                <td>[新节奏]</td>
+                <td>[当前主要风险]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">XVII / References</p>
+            <h2>方法出处模块</h2>
+            <p class="section-note">这块只列来源，不再重讲正文。保留为轻量参考文献式列示，避免过于笨重。</p>
+          </div>
+          <span class="section-chip">按需保留</span>
+        </div>
+        <ol class="citation-list">
+          <li class="citation-item">
+            <div>
+              <h3>《方法来源一》</h3>
+              <p>[一句话说明这篇文章在本次分析中贡献了什么方法。]</p>
+            </div>
+          </li>
+          <li class="citation-item">
+            <div>
+              <h3>《方法来源二，可删》</h3>
+              <p>[只有确实调用第二个来源时才保留。]</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </div>
+
+    <footer class="closing">
+      <p><strong>交付前自查：</strong> 固定骨架是否完整；关系图是否真的帮助理解；证据链、控制点表、程序检查表之间是否去重；新增模块是否只保留真实需要的部分；方法出处是否已改成参考文献式；是否删掉了所有占位文字；文件是否仍为自包含单文件 HTML。</p>
+    </footer>
+  </main>
+
+  <div class="dialog-backdrop" id="graph-backdrop"></div>
+  <section class="graph-dialog" id="graph-dialog" aria-hidden="true" aria-labelledby="graph-dialog-title">
+    <div class="dialog-header">
+      <div>
+        <p class="dialog-kicker" id="graph-dialog-kind">关系详情</p>
+        <h2 class="dialog-title" id="graph-dialog-title">[点击图中节点或关系线查看详情]</h2>
+      </div>
+      <button class="dialog-close" id="graph-dialog-close" type="button" aria-label="关闭关系详情">×</button>
+    </div>
+    <div class="dialog-body">
+      <p class="dialog-summary" id="graph-dialog-summary">[这里显示该节点或该关系在局面中的含义。]</p>
+      <ul class="dialog-points" id="graph-dialog-points"></ul>
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      const hotspots = document.querySelectorAll('.graph-hotspot');
+      const dialog = document.getElementById('graph-dialog');
+      const backdrop = document.getElementById('graph-backdrop');
+      const closeButton = document.getElementById('graph-dialog-close');
+      const kindEl = document.getElementById('graph-dialog-kind');
+      const titleEl = document.getElementById('graph-dialog-title');
+      const summaryEl = document.getElementById('graph-dialog-summary');
+      const pointsEl = document.getElementById('graph-dialog-points');
+
+      function openDialog(source) {
+        const title = source.dataset.title || '[未命名节点]';
+        const kind = source.dataset.kind || '关系详情';
+        const summary = source.dataset.summary || '[此处补充这条关系或这个节点为什么重要。]';
+        const points = (source.dataset.points || '').split('|').map(item => item.trim()).filter(Boolean);
+
+        kindEl.textContent = kind;
+        titleEl.textContent = title;
+        summaryEl.textContent = summary;
+        pointsEl.innerHTML = '';
+
+        if (points.length === 0) {
+          const li = document.createElement('li');
+          li.textContent = '[补充说明该节点或关系的重要含义。]';
+          pointsEl.appendChild(li);
+        } else {
+          points.forEach(point => {
+            const li = document.createElement('li');
+            li.textContent = point;
+            pointsEl.appendChild(li);
+          });
+        }
+
+        dialog.classList.add('is-visible');
+        backdrop.classList.add('is-visible');
+        dialog.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeDialog() {
+        dialog.classList.remove('is-visible');
+        backdrop.classList.remove('is-visible');
+        dialog.setAttribute('aria-hidden', 'true');
+      }
+
+      hotspots.forEach(hotspot => {
+        hotspot.addEventListener('click', () => openDialog(hotspot));
+        hotspot.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openDialog(hotspot);
+          }
+        });
+      });
+
+      backdrop.addEventListener('click', closeDialog);
+      closeButton.addEventListener('click', closeDialog);
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          closeDialog();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
+
