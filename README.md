@@ -2,7 +2,7 @@
 
 <h1>毛选拆局.skill</h1>
 
-<p><em>“最近大家都在蒸馏各种 skill。蒸馏的最终目的，是要能够解决问题。”</em></p>
+<p><em>“最近大家都在蒸馏各种 skill。蒸馏的最终目的，是要能够解决问题！”</em></p>
 
 <p>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
