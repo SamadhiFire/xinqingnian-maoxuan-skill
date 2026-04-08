@@ -2,7 +2,7 @@
 
 <h1>毛选拆局.skill</h1>
 
-<p><em>“最近大家都在蒸馏 skill。蒸馏完如果还是不会解决问题，那就等于把热闹做成了周边。”</em></p>
+<p><em>“最近大家都在蒸馏各种 skill。蒸馏的最终目的，是要能够解决问题！”</em></p>
 
 <p>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
@@ -39,7 +39,7 @@
 
 ---
 
-## 它适合谁
+## 他适合谁
 
 适合那种一眼看过去像是小问题，拆开才发现背后缠着一堆结构的局面：
 
@@ -51,7 +51,7 @@
 
 一句话：
 
-**它擅长的不是“答题”，而是“拆局”。**
+**他擅长的不是“答题”，而是“拆局”。**
 
 ## 它和普通“毛选风格 Prompt”有什么不同
 
@@ -60,7 +60,7 @@
 - **不只分析**：最后会落到下一步动作，而不是停在一段气势很足的话
 - **能出成品**：除了文字版分析，还能生成可保存、可分享的单文件 HTML 报告
 
-## 它怎么工作
+## 他怎么工作
 
 这不是“你一句，我输出八段”的技能。正常流程是：
 
@@ -110,15 +110,11 @@ git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/sk
 
 最省事的用法：
 
-1. 把整个仓库放进平台的自定义 skill 或 prompt 目录。
-2. 至少保留 `SKILL.md` 和 `references/`。
-3. 在对话里直接说“按这个 skill 的流程先问清楚，再分析”。
+霸气地告诉你的Agent：
 
-如果平台根本没有 skill 机制，也能凑合用：
-
-1. 把 `SKILL.md` 的核心规则作为系统提示词。
-2. 把你的问题描述贴进去。
-3. 明确要求它先澄清，别抢答。
+```bash
+帮我安装这个skill：https://github.com/SamadhiFire/maozedong-maoxuan-skill?tab=readme-ov-file
+```
 
 ## 使用
 
@@ -128,9 +124,8 @@ git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/sk
 
 - `用毛选帮我分析这个项目为什么推进不动`
 - `用教员的方法拆一下我和合伙人的关系`
-- `按主要矛盾和阶段判断，分析我现在该不该换工作`
-- `别急着给答案，先把问题问清楚`
-- `最后给我一份 HTML 报告`
+- `用毛选来帮我梳理这个问题`
+
 
 ### 想让结果更准，最好顺手给这五样
 
