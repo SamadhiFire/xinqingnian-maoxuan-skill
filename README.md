@@ -2,7 +2,7 @@
 
 <h1>毛选拆局.skill</h1>
 
-<p><em>“最近大家都在蒸馏各种 skill。蒸馏的最终目的，是要<strong>能够解决问题！<strong>”</em></p>
+<p><em>“最近大家都在蒸馏各种 skill。蒸馏的最终目的，是要能够解决问题。”</em></p>
 
 <p>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
@@ -13,16 +13,16 @@
 
 <br>
 
-<p><strong>把《毛泽东选集》蒸馏成一个真能拆现实问题的 skill。</strong></p>
+<p>把《毛泽东选集》蒸馏成一个真能拆现实问题的 skill。</p>
 
 <p>
   不是语录复读机，不是高压话术生成器，也不是“主要矛盾”四个字到处乱扣帽子。<br>
-  他只干一件正事：<strong>先把问题一步一步梳理清楚<strong>，再把局面拆开，最后给出能往前推的判断和动作。
+  他只干一件正事：先把问题一步一步梳理清楚，再把局面拆开，最后给出能往前推的判断和动作。
 </p>
 
 <br>
 
-<p>你可以把他理解成，把<strong>“新中国最会解决问题的那种脑子”</strong>请来，当一次</strong>临时参谋</strong>。</p>
+<p>你可以把他理解成，把“新中国最会解决问题的那种脑子”请来，当一次临时参谋。</p>
 
 <br>
 
@@ -41,13 +41,46 @@
 
 ## 他适合谁
 
-适合那种一眼看过去像是小问题，拆开才发现背后缠着一堆结构的局面：
+更适合这类“表面像摩擦，底层其实是结构问题”的局面：
 
-- 项目推进不动，人人都在忙，但结果就是不动
-- 合伙人、同事、上下级之间互相拉扯，信息不透明，责任不清楚
-- 团队表面是执行差，实质是路线、阶段和控制点错位
-- 关系问题表面是情绪，背后其实是边界、资源、第三方和旧账
-- 你在纠结换工作、止损、继续谈、还是直接掀桌，但脑子里还是一锅粥
+<table>
+  <tr>
+    <td width="50%" valign="top">
+
+**项目推进**  
+项目推进不动，人人都在忙，但关键结果就是不动。
+
+  </td>
+    <td width="50%" valign="top">
+
+**多人拉扯**  
+合伙人、同事、上下级之间互相拉扯，信息不透明，责任不清楚。
+
+  </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+
+**团队错位**  
+表面像执行差，实质是路线、阶段和控制点没对齐。
+
+  </td>
+    <td width="50%" valign="top">
+
+**关系边界**  
+表面像情绪冲突，背后其实是边界、资源、第三方和旧账。
+
+  </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+
+**重大选择**  
+你在纠结换工作、止损、继续谈还是直接掀桌，但脑子里还是一锅粥。
+
+  </td>
+  </tr>
+</table>
 
 一句话：
 
@@ -55,11 +88,60 @@
 
 ## 他和普通“毛选风格 Prompt”有什么不同
 
-- **不抢答**：先调查，再判断，不装一眼看穿全局
-- **不空喊**：不堆大词，重点是主要矛盾、阶段、力量、路线、风险
-- **不迷路**：长问题先钉主问题、原始问题对照和案件工作单，不靠模型自己“记住”
-- **不只分析**：最后会落到下一步动作，而不是停在一段气势很足的话
-- **能出成品**：除了文字版分析，还能生成可保存、可分享的单文件**HTML 报告**
+不是把语言换成“毛选口吻”，而是把处理问题的方法换掉了：
+
+<table>
+  <tr>
+    <td width="22%" valign="top">
+
+**不抢答**
+
+  </td>
+    <td valign="top">
+先调查，再判断，不装一眼看穿全局。
+  </td>
+  </tr>
+  <tr>
+    <td width="22%" valign="top">
+
+**不空喊**
+
+  </td>
+    <td valign="top">
+不堆大词，重点是主要矛盾、阶段、力量、路线和风险。
+  </td>
+  </tr>
+  <tr>
+    <td width="22%" valign="top">
+
+**不迷路**
+
+  </td>
+    <td valign="top">
+长问题先钉主问题、原始问题对照和案件工作单，不靠模型自己“记住”。
+  </td>
+  </tr>
+  <tr>
+    <td width="22%" valign="top">
+
+**不只分析**
+
+  </td>
+    <td valign="top">
+最后会落到下一步动作，而不是停在一段气势很足的话。
+  </td>
+  </tr>
+  <tr>
+    <td width="22%" valign="top">
+
+**能出成品**
+
+  </td>
+    <td valign="top">
+除了文字版分析，还能生成可保存、可分享的单文件 HTML 报告。
+  </td>
+  </tr>
+</table>
 
 ## 他怎么工作
 
@@ -68,6 +150,23 @@
 > **先问清，再拆局；先定线，再交付。**
 
 ```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#f7f1e7",
+    "primaryColor": "#f6e2b8",
+    "primaryBorderColor": "#b6492d",
+    "primaryTextColor": "#5a120d",
+    "secondaryColor": "#f0c36d",
+    "secondaryBorderColor": "#b6492d",
+    "secondaryTextColor": "#5a120d",
+    "tertiaryColor": "#8f140c",
+    "tertiaryBorderColor": "#d8c7a3",
+    "tertiaryTextColor": "#fff4db",
+    "lineColor": "#b6492d",
+    "fontFamily": "Georgia, 'Noto Serif SC', 'Source Han Serif SC', serif"
+  }
+}}%%
 mindmap
   root((四步工作法))
     01 先问清
