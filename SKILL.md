@@ -88,7 +88,7 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 
 1. 先读 [references/README.md](./references/README.md)，看清默认主链和每层交接关系
 2. 再读 [ambiguity-gate.md](./references/clarification/ambiguity-gate.md)，确认当前还缺哪些关键结构
-3. 需要澄清时，再读 [intake-flow.md](./references/clarification/intake-flow.md) 和 [choice-question-format.md](./references/clarification/choice-question-format.md)；长问题再补 [focus-anchor.md](./references/clarification/focus-anchor.md)
+3. 需要澄清时，再读 [intake-flow.md](./references/clarification/intake-flow.md) 和 [choice-question-format.md](./references/clarification/choice-question-format.md)；如果某类结构缺口已经很明显，再按需借 [question-packs-by-domain.md](./references/clarification/question-packs-by-domain.md) 继续补结构，但不要把它当正式分类；长问题再补 [focus-anchor.md](./references/clarification/focus-anchor.md)
 4. 澄清基本闭合后，读 [problem-restatement.md](./references/clarification/problem-restatement.md)
 5. 然后按主链进入 [problem-taxonomy.md](./references/categories/problem-taxonomy.md) -> [scene-index.md](./references/scenarios/scene-index.md) -> [method-index.md](./references/methods/method-index.md)
 6. 命中高风险表达或翻译风险时，再进 [misuse-boundaries.md](./references/risks/misuse-boundaries.md) 和 [translation-red-lines.md](./references/risks/translation-red-lines.md)

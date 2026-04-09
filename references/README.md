@@ -27,15 +27,16 @@
 
 1. 先看 [ambiguity-gate.md](./clarification/ambiguity-gate.md)，确认当前还缺哪些关键结构
 2. 需要澄清时，再看 [intake-flow.md](./clarification/intake-flow.md) 和 [choice-question-format.md](./clarification/choice-question-format.md)
-3. 问题偏长、偏复杂或多问并行时，再补 [focus-anchor.md](./clarification/focus-anchor.md)
-4. 澄清基本闭合后，看 [problem-restatement.md](./clarification/problem-restatement.md)
-5. 然后进 [problem-taxonomy.md](./categories/problem-taxonomy.md) 做分类
-6. 再进 [scene-index.md](./scenarios/scene-index.md) 选现实入口
-7. 再进 [method-index.md](./methods/method-index.md) 选当前最早缺失的方法卡
-8. 命中高风险表达或翻译风险时，再进 [misuse-boundaries.md](./risks/misuse-boundaries.md) 和 [translation-red-lines.md](./risks/translation-red-lines.md)
-9. 分类、方法、风险或输出形式拿不准时，再进 [confidence-rules.md](./routing/confidence-rules.md)
-10. 正式交付前，再进 [output-mode-routing.md](./routing/output-mode-routing.md)
-11. 只有用户明确要 `HTML 报告` 时，才进入 [visual-report-spec.md](./html-output/visual-report-spec.md)
+3. 如果某类结构缺口已经很明显，再按需借 [question-packs-by-domain.md](./clarification/question-packs-by-domain.md) 继续补结构；这只是 `临时追问入口`，不等于正式分类
+4. 问题偏长、偏复杂或多问并行时，再补 [focus-anchor.md](./clarification/focus-anchor.md)
+5. 澄清基本闭合后，看 [problem-restatement.md](./clarification/problem-restatement.md)
+6. 然后进 [problem-taxonomy.md](./categories/problem-taxonomy.md) 做分类
+7. 再进 [scene-index.md](./scenarios/scene-index.md) 选现实入口
+8. 再进 [method-index.md](./methods/method-index.md) 选当前最早缺失的方法卡
+9. 命中高风险表达或翻译风险时，再进 [misuse-boundaries.md](./risks/misuse-boundaries.md) 和 [translation-red-lines.md](./risks/translation-red-lines.md)
+10. 分类、方法、风险或输出形式拿不准时，再进 [confidence-rules.md](./routing/confidence-rules.md)
+11. 正式交付前，再进 [output-mode-routing.md](./routing/output-mode-routing.md)
+12. 只有用户明确要 `HTML 报告` 时，才进入 [visual-report-spec.md](./html-output/visual-report-spec.md)
 
 回复格式另外参考：
 
@@ -53,6 +54,7 @@
 
 - 场景和方法路由默认留在内部，不作为每轮固定外显字段
 - 不要让 `当前进度` 压过 `主体结构`
+- 提问负载随阶段下降：澄清阶段少量高杠杆提问，分析阶段默认不再追问，方案阶段默认直接给路线
 
 完整规则看 [round-response-structure.md](./clarification/round-response-structure.md)。
 
@@ -64,12 +66,14 @@
 
 - 判断还缺哪些关键结构
 - 分轮澄清
+- 必要时临时借追问包补结构
 - 把问题重述成稳定版本
 - 长问题防漂移
 
 不负责：
 
 - 正式分析
+- 正式主领域分类
 - 具体方法卡判断
 - 正式输出形式
 
