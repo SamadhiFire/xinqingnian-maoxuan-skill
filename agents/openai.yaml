@@ -1,7 +1,7 @@
 interface:
   display_name: "毛选方法分析"
   short_description: "用《毛选》方法分析工作、关系、决策等结构性问题"
-  default_prompt: "Use $maozedong-maoxuan-skill to analyze this situation with clarification first, then give a structured judgment or HTML report."
+  default_prompt: "Use $maozedong-maoxuan-skill to analyze this situation. Once this skill is triggered, treat the case as a complex structural problem by default. Clarification is a hard prerequisite for every task: the first reply must ask 1-2 clarification questions before any analysis, and the first question should lock the user's goal. Every clarification question must use 3-4 options plus “其他（请补一句）”. Do not give judgments, root-cause claims, action plans, message drafts, or HTML routing until the clarification gate is passed."
 
 policy:
   allow_implicit_invocation: true
