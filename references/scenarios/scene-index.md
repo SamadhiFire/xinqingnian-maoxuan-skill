@@ -1,12 +1,29 @@
 # 场景入口索引
 
-[返回总入口](../../SKILL.md) · [问题分类](../categories/problem-taxonomy.md) · [方法索引](../methods/method-index.md) · [模糊输入识别](../clarification/ambiguity-gate.md)
+[返回总入口](../../SKILL.md) · [协同地图](../README.md) · [问题分类](../categories/problem-taxonomy.md) · [方法索引](../methods/method-index.md) · [模糊输入识别](../clarification/ambiguity-gate.md)
 
 ## 用途说明
 
 - 这不是方法卡，也不是分类体系的替代品。
 - 它只解决一件事：当问题已经能大致分清类型后，帮助你快速判断应该先进入哪一类场景入口。
 - 如果主领域还拿不准，先回 [problem-taxonomy.md](../categories/problem-taxonomy.md)；如果连问题本身都还没成形，先回 [ambiguity-gate.md](../clarification/ambiguity-gate.md)。
+
+## 标准交接
+
+场景层的标准位置是：
+
+`澄清/重述 -> 分类 -> 场景 -> 方法`
+
+它只决定两件事：
+
+- 从哪个现实入口进入最顺
+- 进入后优先看哪 `1` 到 `3` 张方法卡
+
+它不负责：
+
+- 重做澄清
+- 替代方法卡正文
+- 提前决定输出形式
 
 ## 6 类场景入口
 
@@ -59,5 +76,6 @@
 
 - 场景入口是为了帮助陌生用户更快上手，不是为了替代方法层。
 - 一个问题通常只需要 1 个主要进入角度，不要一开始就把 6 类全扫一遍。
+- 一旦主入口确定，就尽快交给 `methods/`，不要长期停留在场景层反复描述。
 - 如果场景拿不准，回 [confidence-rules.md](../routing/confidence-rules.md) 先做保守判断。
 - 如果已经明确命中高风险表达或高风险动作，再进入 [misuse-boundaries.md](../risks/misuse-boundaries.md) 或 [translation-red-lines.md](../risks/translation-red-lines.md)。

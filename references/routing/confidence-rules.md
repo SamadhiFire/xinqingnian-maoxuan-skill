@@ -1,6 +1,6 @@
 # 分类置信度与升级规则
 
-[返回总入口](../../SKILL.md) · [模糊输入识别](../clarification/ambiguity-gate.md) · [澄清流程](../clarification/intake-flow.md) · [输出路由](./output-mode-routing.md)
+[返回总入口](../../SKILL.md) · [协同地图](../README.md) · [模糊输入识别](../clarification/ambiguity-gate.md) · [澄清流程](../clarification/intake-flow.md) · [输出路由](./output-mode-routing.md)
 
 ## 一、文件作用
 
@@ -15,6 +15,12 @@
 - 设计具体追问问题
 - 替代方法卡本身的调用条件
 - 直接决定某张风险卡的内容
+
+定位提醒：
+
+- `routing/` 是例外处理层，不是常驻分析层。
+- 正常主链应尽量停留在 `clarification -> categories -> scenarios -> methods`。
+- 只有真的拿不准时，才回这里做保守判断或交付判断。
 
 对应关系：
 

@@ -1,5 +1,7 @@
 # HTML 报告规范
 
+[返回总入口](../../SKILL.md) · [协同地图](../README.md) · [输出路由](../routing/output-mode-routing.md) · [构建规则](./report-build-rules.md)
+
 ## 一、定位
 
 这个文件只规定一件事：

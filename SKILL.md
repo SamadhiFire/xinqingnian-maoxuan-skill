@@ -7,33 +7,31 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 
 这个 skill 的目标，不是复述原文、堆砌语录或输出政治口号，而是把《毛泽东选集》中可复用的方法论，翻译成一套现代问题分析流程。
 
-它的核心不是“像不像毛选语言”，而是三件事：
+核心只看三件事：
 
-- 能不能先把目标锁清，再把问题看清。
-- 能不能用合适的方法切中结构。
-- 能不能在不误用、不翻坏的前提下，给出可执行的判断与下一步。
+- 能不能先把目标锁清，再把问题看清
+- 能不能用合适的方法切中结构
+- 能不能在不误用、不翻坏的前提下，给出可执行的判断与下一步
 
 ## 这份 SKILL.md 只负责什么
 
 这份 `SKILL.md` 只负责三件事：
 
-- 说明什么时候触发这个 skill。
-- 说明第一次该先读什么，以及整套流程怎么走。
-- 说明 `references/` 每一层各自负责什么。
+- 说明什么时候触发这个 skill
+- 说明有哪些不可跳过的硬规则
+- 指向 `references/` 里的协同地图和首轮读取顺序
 
-它不负责展开写细规则。  
-具体分类规则、澄清规则、方法卡规则、风险规则、HTML 结构规则，都放在 `references/` 里按需读取。
-
-一句话说，这里是总入口，不是把 `references/` 再重写一遍。
+这里不再展开澄清、分类、方法卡、风险和 HTML 细则。
+这些都放在 [references/README.md](./references/README.md) 和对应子目录里按需读取。
 
 ## 什么时候触发
 
 满足下面任一类情况，就应触发这个 skill：
 
-- 用户明确点名：`用毛选帮我分析`、`用教员的方法帮我分析`、`按毛选的方法拆一下`、`按主要矛盾/阶段判断分析`、`用统一战线/调查研究/实践检验的方法看这件事`。
-- 用户希望把毛选中的方法论用于现实问题，而不是只要语录、摘抄、史料或考据。
-- 用户面对的是结构性问题，而不是一个几句话就能处理掉的轻问题。
-- 用户希望得到结构化分析，或希望把复杂局面整理成一份 `HTML 报告`。
+- 用户明确点名：`用毛选帮我分析`、`用教员的方法帮我分析`、`按毛选的方法拆一下`、`按主要矛盾/阶段判断分析`、`用统一战线/调查研究/实践检验的方法看这件事`
+- 用户希望把毛选中的方法论用于现实问题，而不是只要语录、摘抄、史料或考据
+- 用户面对的是结构性问题，而不是一个几句话就能处理掉的轻问题
+- 用户希望得到结构化分析，或希望把复杂局面整理成一份 `HTML 报告`
 
 常见适用问题包括：
 
@@ -44,24 +42,38 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 - 生活决策、重大选择、路线比较、资源取舍
 - 团队领导、协同治理、角色分层、制度与反馈机制
 
-## 不适合触发
 
-下面这些情况，不应强行触发这个 skill，或应改用更轻的普通分析方式：
+## 先记住的硬规则
 
-- 用户只想要原文摘抄、章节推荐、语录整理或历史考据。
-- 用户只是想借用高压政治语言做贴标签、压人、操控、羞辱、清洗或道德审判。
-- 问题非常轻、非常直接，用普通常识建议即可解决。
-- 问题核心是纯技术细节，而不是结构判断、方法选择、关系处理或路线设计。
+- 一旦触发，就默认按结构题处理，不按轻问题直接答
+- 不要因为题目看起来像个人问题，就把它简化成普通建议题
+- 所有任务都先澄清，再分析；澄清没闭合前，不进入 `深度分析`，也不进入 `HTML 报告`
+- 每一轮回复默认使用 `背景信息 / 主体结构 / 当前进度` 三段结构
+- 第一轮优先锁 `目标`，再补一个最关键的结构位
+- 澄清默认使用带 `A/B/C/D/其他` 的选项式追问
+- 正式输出前，再确认用户要 `深度分析` 还是 `HTML 报告`
+- 如果用户已经提到 `HTML`，但关键结构还没补齐，必须明确做预期管理
+- 任何时候都不能把方法论误用成贴标签、操控、羞辱、清洗或道德审判
+
+## 每轮回复默认结构
+
+每一轮回复都默认使用三段：
+
+1. `背景信息`：沉淀当前已确认的结构，不写长摘要
+2. `主体结构`：澄清时只缩小不确定性；分析时只调用当前最需要的 `1` 到 `2` 张方法卡
+3. `当前进度`：只写当前阶段、当前关注和下一步，不默认暴露内部场景/方法路由
+
+完整规则看 [round-response-structure.md](./references/clarification/round-response-structure.md)。
 
 ## 用户怎样提问，最容易用好这个 skill
 
 最好同时提供下面五项信息：
 
-- 目标：你最想推进的结果是什么。
-- 事件：最近一次最能说明问题的关键事件是什么。
-- 人物：关键人物、关系或对象分别是谁。即使表面只涉及两个人，也尽量说明是否还有第三方、家庭、朋友、旧关系、利益或身体因素在持续影响。
-- 尝试：你已经做过哪些动作、试过哪些办法。
-- 约束：你现在的现实限制、底线或不能承受的代价是什么。
+- 目标：你最想推进的结果是什么。这里问的是你想先达成什么结果，不是先把问题分成哪一类
+- 事件：最近一次最能说明问题的关键事件是什么
+- 人物：关键人物、关系或对象分别是谁
+- 尝试：你已经做过哪些动作、试过哪些办法
+- 约束：你现在的现实限制、底线或不能承受的代价是什么
 
 常见好用问法：
 
@@ -69,329 +81,25 @@ description: 当用户希望用《毛泽东选集》/教员的方法分析现实
 - `用教员的方法帮我拆一下我和合伙人的关系。`
 - `按主要矛盾和阶段判断分析我现在该不该换工作。`
 - `用毛选的方法分析这个团队协作为什么越来越乱。`
-- `在正式输出前先问我，要文字版还是 HTML 版。`
-
-不要按“题目看起来轻一点”就少问。
-一旦触发这个 skill，就默认按复杂结构题拆解：持续做多轮澄清，直到局面结构基本清楚；在这之前，不进入 `深度分析`，也不进入 `HTML 报告`。
-
-如果用户已经提到 `HTML`，或当前问题天然容易让用户期待最终会落成 `HTML 报告`，那么在每一轮澄清或中间回复的收束处，都要顺手做一次预期管理：
-
-- 明确告诉用户：当前还在补关键结构，信息还不够生成 `HTML 报告`
-- 说明还缺的是哪一类关键信息
-- 说明等这些信息补齐后，才会进入正式输出或生成 `HTML`
-
-这不是可有可无的提醒，而是底线要求。  
-只要关键结构还没看清，就不能提前生成报告，也不能让用户误以为“下一条大概率就会直接出 HTML 成品”。
-
-这里有一条特别重要：
-
-- 不要按“当前只冒出来几个人”判断问题轻重。
-- 表面是双人问题，也可能仍然是复杂问题；关键要看背后是否还藏着第三方、长期模式、关键代价或足以改写判断的结构位。
-- 一旦触发这个 skill，就默认按复杂题拆，不再走“这题可能很简单，可以直接答”的路线。
 
 ## 第一次使用时，先读什么
 
 陌生用户不需要把整个 `references/` 一次读完。推荐顺序是：
 
-1. 先读 [ambiguity-gate.md](./references/clarification/ambiguity-gate.md)，确认当前任务必须先澄清；这个 skill 不存在跳过澄清直接进入分析的入口。
-2. 如果要澄清，再读 [intake-flow.md](./references/clarification/intake-flow.md) 和 [choice-question-format.md](./references/clarification/choice-question-format.md)；如果问题偏长、偏复杂或多问并行，再补读 [focus-anchor.md](./references/clarification/focus-anchor.md)。
-3. 澄清基本闭合后，读 [problem-restatement.md](./references/clarification/problem-restatement.md)，先把题目收束成稳定版本。
-4. 再读 [problem-taxonomy.md](./references/categories/problem-taxonomy.md)，知道这个问题属于哪类主领域、复杂度大概在哪一层。
-5. 再读 [scene-index.md](./references/scenarios/scene-index.md)，快速判断应该先从哪个现实场景入口进入。
-6. 然后读 [method-index.md](./references/methods/method-index.md)，只选当前最早缺失的一张方法卡起手。
-7. 如果命中误用或翻译风险，再进入 [misuse-boundaries.md](./references/risks/misuse-boundaries.md) 和 [translation-red-lines.md](./references/risks/translation-red-lines.md)。
-8. 如果拿不准分类、方法、风险或输出形式，再看 [confidence-rules.md](./references/routing/confidence-rules.md)。
-9. 如果准备正式输出，再看 [output-mode-routing.md](./references/routing/output-mode-routing.md) 决定如何交付。
-10. 只有在用户要 `HTML` 时，才进入 [visual-report-spec.md](./references/html-output/visual-report-spec.md)、[report-build-rules.md](./references/html-output/report-build-rules.md) 和 [visual-report-template.html](./references/html-output/visual-report-template.html)。
-
-一句话理解：
-
-- 先锁目标，再持续澄清，不走直接分析捷径。
-- 再决定从哪个场景进入。
-- 再决定先用哪张方法卡。
-- 最后才决定怎么输出。
-
-## 公开版 references 地图
-
-`references/` 下面的文件很多，但它们不是同时使用的。每一层都有明确职责。
-
-- `references/categories/`
-  用来做问题分类，先判断主领域、方法标签和复杂度。
-- `references/clarification/`
-  用来判断是否需要澄清、该怎么问、如何把问题重述成可分析版本；其中 [choice-question-format.md](./references/clarification/choice-question-format.md) 规定澄清默认使用带 `A/B/C/D/其他` 的选项题。复杂长问题还要用 [focus-anchor.md](./references/clarification/focus-anchor.md) 先固定 `主问题锚点 / 原始问题对照 / 案件工作单 / 轮次日志`，防止后面分析漂移。
-- `references/scenarios/`
-  用来决定从哪个现实场景入口进入，例如工作推进、关系边界、学习成长、团队治理。
-- `references/methods/`
-  这是主干内容，用来决定当前最该调用哪张方法卡，以及后面通常接哪张卡。
-- `references/risks/`
-  用来防误用、防翻坏，不是默认第一入口，只在需要时进入；风险入口优先看 [misuse-boundaries.md](./references/risks/misuse-boundaries.md) 和 [translation-red-lines.md](./references/risks/translation-red-lines.md)。
-- `references/routing/`
-  用来处理“拿不准怎么办”和“正式输出前如何确认交付形式”；核心是 [confidence-rules.md](./references/routing/confidence-rules.md) 和 [output-mode-routing.md](./references/routing/output-mode-routing.md)。
-- `references/html-output/`
-  只在用户选择 `HTML 报告` 时使用；先读 [visual-report-spec.md](./references/html-output/visual-report-spec.md)，再读 [report-build-rules.md](./references/html-output/report-build-rules.md)，最后复用 [visual-report-template.html](./references/html-output/visual-report-template.html) 生成最终单文件 HTML。
-
-## 标准工作流
-
-这个 skill 的完整工作流，不是“看到问题就套方法”，而是下面这条链：
-
-`触发判断 -> 目标确认 -> 必要澄清 -> 主问题锚点 -> 原始问题对照 -> 案件工作单 -> 闭合检查 -> 问题重述 -> 分类 -> 场景入口 -> 方法链 -> 风险检查 -> 完成内容判断 -> 输出前答题校验 -> 询问用户要文字版还是 HTML 版 -> 正式输出`
-
-下面按顺序说明。
-
-### 1. 先确认：所有任务先澄清再分析
-
-先看 [ambiguity-gate.md](./references/clarification/ambiguity-gate.md)。
-
-这里只确认一件事：
-
-- 当前还缺哪些关键结构，因此必须先继续澄清。
-
-在这个 skill 里，不再走“能不能直接分析”的分叉。
-默认动作就是先澄清。
-特别是第一轮，先锁目标，再补最近一次关键事件或关键结构；在这之前，不能抢先下判断或给方案。
-
-### 2. 需要澄清时，怎么问
-
-先看 [intake-flow.md](./references/clarification/intake-flow.md)、[choice-question-format.md](./references/clarification/choice-question-format.md)，再按需看 [question-packs-by-domain.md](./references/clarification/question-packs-by-domain.md)。
-如果问题已经明显偏长、偏复杂、用户一次问了多个问题，或已经进入第二轮澄清，就必须看 [focus-anchor.md](./references/clarification/focus-anchor.md)。
-
-澄清时只做一件事：
-
-- 补足正式分析真正必须的信息。
-
-这里统一按复杂结构题处理，分多轮逐步问开。每轮只补当前最关键的缺口，答完后重新判断是否还缺关键结构。只要关键人物、关键事件链、关键权利或资源分布、关键约束仍不清楚，就继续澄清，不要抢先进入正式分析或 HTML。
-澄清默认写成带 `A/B/C/D/其他` 的选项题；如果当前还没过澄清门槛，第一轮回复只能问 `1` 到 `2` 题，不得夹带正式分析、成因归因或行动建议。
-
-默认优先补五项：
-
-- 目标
-- 事件
-- 人物
-- 尝试
-- 约束
-
-不要为了显得认真而无限追问，也不要把分场景追问包整包问完。
-不要用开放追问替代本该直接给出的选项题；默认先把问题压成用户能快速选择的 `3` 到 `4` 个选项，再保留 `其他` 出口。
-不要把聊天记录、微信细节、措辞版本当成默认交付方向；它们最多是后续附加层，不是前面的主分析。
-
-复杂长问题里，光追问还不够。  
-要先用 [focus-anchor.md](./references/clarification/focus-anchor.md) 固定：
-
-- 这次真正要解决的主问题是什么
-- 用户原始问题清单是什么
-- 本轮只优先回答哪 `1` 到 `2` 个问题
-- 分析底稿里的关键字段现在分别是什么
-- 哪些内容暂不展开
-
-否则很容易一边问一边扩题，最后分析对象漂移。
-对长问题来说，不要靠“脑中记住大意”继续走，而要先写出 `主问题锚点 / 原始问题对照 / 案件工作单`。
-
-### 3. 澄清后，先做问题重述
-
-看 [problem-restatement.md](./references/clarification/problem-restatement.md)。
-
-问题重述的作用，是把用户原始叙述收束成一个可分析版本，避免后面一边分析一边改题。
-如果问题属于复杂长问题，问题重述前应先完成 `主问题锚点`，否则只有重述没有锚点，后续长文里仍可能丢失用户最初的关键问题。
-如果问题属于长问题或多问并行问题，问题重述还应优先根据 `案件工作单` 来写，而不是重新在原始长文里漫游一遍。
-
-### 4. 正式分析前，先做分类
-
-看 [problem-taxonomy.md](./references/categories/problem-taxonomy.md)。
-
-分类时先定三件事：
-
-- 主领域是什么
-- 方法标签最该挂哪 `2` 到 `4` 个
-- 复杂度是 `L1`、`L2`、`L3` 还是 `L4`
-
-这一步不是为了贴标签，而是为了避免后面一上来就调错方法，或者把复杂方法下沉到轻问题。
-
-### 5. 分类后，先选场景入口
-
-看 [scene-index.md](./references/scenarios/scene-index.md)。
-
-场景层解决的问题不是“用什么方法”，而是：
-
-- 这个问题从哪个现实入口进入最顺。
-- 这类问题通常最该先补什么信息。
-- 这类问题通常会连到哪些方法。
-
-一个问题通常只需要选 `1` 个主场景入口。  
-如果同时像两类场景，先选“当前最影响结果”的那类做主入口，另一类作为补充。
-
-### 6. 场景确定后，再选方法卡
-
-先看 [method-index.md](./references/methods/method-index.md)，再进入具体方法卡。
-
-方法层的原则只有一个：
-
-- 只选当前最早缺失的一张方法卡起手。
-
-不要默认把 8 张卡全读完，也不要一上来就跳到后段卡。
-
-### 7. 拿不准时，不要硬装确定
-
-只要在分类、场景、方法、风险或输出判断上拿不准，就看 [confidence-rules.md](./references/routing/confidence-rules.md)。
-
-核心原则是：
-
-- 宁可先保守，也不要假装已经判断清楚。
-
-### 8. 命中风险信号时，再做风险检查
-
-不是每次都要把 `references/risks/` 全读完，但出现下面情况时，必须做风险检查：
-
-- 准备使用高风险表达，例如 `主要矛盾`、`统一战线`、`群众路线`、`统一口径`、`整风`、`合法性`、`持久战`
-- 准备把复杂方法下沉到轻问题
-- 准备直接做公开定性、对象分层、联盟判断、资源压注、复杂 rollout
-- 已经命中方法卡里的 `不直接调用` 或 `误用边界`
-
-风险检查顺序是：
-
-1. 先看 [misuse-boundaries.md](./references/risks/misuse-boundaries.md)
-2. 再看 [translation-red-lines.md](./references/risks/translation-red-lines.md)
-3. 必要时进入对应独立风险卡
-
-### 9. 先完成内容判断，但先不要正式整段输出
-
-在进入最终交付前，先把内容判断完成：
-
-- 问题已经怎么重述
-- 主问题锚点是什么
-- 原始问题对照和案件工作单是否已经稳定
-- 当前核心判断是什么
-- 该调用哪些方法
-- 风险边界在哪里
-- 下一步建议是什么
-
-这一步是先把内容想清楚，不是立刻把完整成品发出去。
-
-### 10. 在正式输出完整内容前，先问用户要哪种形式
-
-只有在澄清已经闭合后，才进入这一步。
-
-如果当前仍有关键人物没展开、关键事件链没对齐、共同决策/信息/资源是否分叉还不清楚，先不要问用户要 `深度分析` 还是 `HTML 报告`。这时正确动作是继续澄清，或先给出“目前已确认的结构 + 仍待确认的关键缺口”。
-如果 `原始问题对照` 还没冻结，或 `案件工作单` 还写不稳，也同样不要进入这一步。
-只要仍存在可能改写结论的关键未知项，就只能输出“已知结构 + 待确认缺口”，禁止正式定性结论。
-
-如果用户已经提过 `HTML`，这时还要额外做一句清晰的预期管理，直接说明：
-
-- 现在仍处在澄清阶段
-- 当前信息量不足以支撑正式成品
-- 因此此时不能生成 `HTML 报告`
-
-看 [output-mode-routing.md](./references/routing/output-mode-routing.md)。
-
-在正式输出完整内容之前，统一确认一次：
-
-- 用户要 `深度分析`
-- 还是要 `HTML 报告`
-
-处理规则是：
-
-- 如果用户要 `HTML`，就在用户当前工作目录（通常就是当前打开的文件夹）生成 `HTML 报告`
-- 如果用户不要 `HTML`，就输出 `深度分析`
-- 如果用户之前已经明确说过要 `HTML`，这一轮就视为已确认
-
-这里的关键不是内容变一套，而是呈现形式变一套。
-对长问题来说，在这一步之前还要过一次 `输出前答题校验`，确认没有漏题、串题或把传闻写成定论。
-
-### 11. 深度分析和 HTML 报告，共用同一套内容骨架
-
-`深度分析` 和 `HTML 报告` 的差别，主要是呈现形式，不是内容逻辑。
-
-两者应共用同一套内容骨架：
-
-- 先有核心判断
-- 再按问题结构启用需要的模块
-- 最后落实到下一步行动、观察点和风险提醒
-
-不要为 `深度分析` 单独再造一套和 `HTML` 不一致的死模板。  
-真正的内容骨架，以 [visual-report-spec.md](./references/html-output/visual-report-spec.md) 为准：
-
-- 固定骨架
-- 按需模块
-- 不同案例按结构选模块，而不是按场景硬套固定长模板
-
-如果用户选择 `深度分析`，就把同一套内容骨架用文字方式输出。  
-如果用户选择 `HTML 报告`，就把同一套内容骨架按 HTML 规范组织出来。
-
-## HTML 输出要求
-
-只有在用户选择 `HTML 报告` 时，才进入 `references/html-output/`。
-
-进入后按下面顺序读取：
-
-1. [visual-report-spec.md](./references/html-output/visual-report-spec.md)
-2. [report-build-rules.md](./references/html-output/report-build-rules.md)
-3. [visual-report-template.html](./references/html-output/visual-report-template.html)
-
-可直接参考两个现成示例：
-
-- [组织分叉案例输入.md](./examples/组织分叉案例输入.md) 和 [组织分叉案例报告.html](./examples/组织分叉案例报告.html)
-
-HTML 输出要求如下：
-
-- 最终 HTML 以自包含为目标，方便直接打开、保存和分享。
-- 默认做法是把 `visual-report-template.html` 复制到目标输出文件，再替换占位内容、删除不需要的按需模块；不要从零重写另一份新 HTML。
-- 具体占位填充、模块删改、关系图数据填写、编号重排规则，以 [report-build-rules.md](./references/html-output/report-build-rules.md) 为准。
-- 非用户明确要求改风格，不要重写模板的 `:root` 视觉变量、主体 class 命名、响应式布局、关系图 SVG 壳子、弹层交互 JS。
-- 可以在不破坏模板视觉系统和交互结构的前提下做局部内容调整，但不要把模板改成另一套完全不同的页面骨架。
-- 如果报告正文是中文，封面标识、区块编号、模块标题、表头、按钮、提示语等用户可见层文案也必须默认中文化；不要把模板里的英文壳层标签直接保留下来。
-- 如果用户没有指定路径或文件名，默认在用户当前工作目录（通常就是当前打开的文件夹）生成 `YYYY-MM-DD-topic.html`。
-- 如果用户明确指定了输出目录或文件名，按用户指定路径输出。
-- HTML 不是另一套内容体系，而是同一内容骨架的可视化呈现。
-- 如果问题的难点主要在关联结构，优先用关系图把关键人物、事项、组织之间的关系先梳清，再承接正文。
-- 交付前删掉所有 `[]` 占位文字、`可删` 提示和不需要的可选模块，再检查区块编号是否连续。
-- 不要把最终用户报告写回 skill 自己的 `references/html-output/`；该目录只放规范与模板。
-
-## 对用户怎么说
-
-内部可以先完成分类、场景、方法和风险判断，但默认不要把下面这类内部路由语言直接说给用户：
-
-- `按这个 skill 的框架`
-- `主入口 / 次入口`
-- `起手方法`
-- 具体 reference 文件名
-
-对用户更好的说法是：
-
-- 先说当前还需要看清什么
-- 再说目前已经能成立的事实结构
-- 复杂长问题里，再补一句“这轮我先回答哪几个问题”
-- 再说为什么还不能直接下正式结论
-- 如果用户提过 `HTML` 或明显在等成品，再补一句：当前还不能生成 `HTML 报告`，等关键缺口补齐后再做
-- 只有用户明确追问 skill 机制时，才解释内部路由过程
-
-一句话说：
-
-- 内部可以有路由
-- 对外优先说人话，不写成技能调度日志
-
-例如，不要直接说“主入口是关系边界，次入口是团队治理，起手方法是……”。
-更自然的说法是：“现在最关键的，不是先下结论，而是先把共同决策、信息流和外部主体有没有分开问清。如果这几件还没问清，我先继续把结构补齐。”
-
-## 使用原则
-
-- 优先提炼方法，不直接搬用政治口号。
-- 先分清事实、判断、情绪，再进入分析。
-- 先把输入看清，再决定方法，不要看到词就套卡。
-- `先问清楚` 优先于 `先给判断`；澄清门槛没过时，第一轮只问，不分析。
-- 澄清默认使用带 `A/B/C/D/其他` 的选项题；没有 `其他` 的追问视为不完整。
-- 场景入口是为了更快上手，不是为了替代方法层。
-- 一次分析通常只需要 `1` 个主场景入口和 `1` 到 `3` 张方法卡。
-- 不把高压语言下沉到轻问题，不把复杂方法套进普通摩擦。
-- 一律优先输出结构，不急着抢结论。
-- 只要仍存在可能改写结论的关键未知项，就只输出“已知结构 + 待确认缺口”，不做正式定性。
-- 复杂长问题先把主问题和原始问题清单外部化，不相信模型会自然记住。
-- 如果复杂性主要来自人物、事项、组织之间的关联，HTML 应优先考虑关系图模块，而不是只堆文字说明。
-
-- 任何时候都保留边界意识，避免把方法论误用成控制、羞辱、操纵或清洗。
+1. 先读 [references/README.md](./references/README.md)，看清默认主链和每层交接关系
+2. 再读 [ambiguity-gate.md](./references/clarification/ambiguity-gate.md)，确认当前还缺哪些关键结构
+3. 需要澄清时，再读 [intake-flow.md](./references/clarification/intake-flow.md) 和 [choice-question-format.md](./references/clarification/choice-question-format.md)；长问题再补 [focus-anchor.md](./references/clarification/focus-anchor.md)
+4. 澄清基本闭合后，读 [problem-restatement.md](./references/clarification/problem-restatement.md)
+5. 然后按主链进入 [problem-taxonomy.md](./references/categories/problem-taxonomy.md) -> [scene-index.md](./references/scenarios/scene-index.md) -> [method-index.md](./references/methods/method-index.md)
+6. 命中高风险表达或翻译风险时，再进 [misuse-boundaries.md](./references/risks/misuse-boundaries.md) 和 [translation-red-lines.md](./references/risks/translation-red-lines.md)
+7. 拿不准分类、方法、风险或输出形式时，再看 [confidence-rules.md](./references/routing/confidence-rules.md)
+8. 正式交付前，再看 [output-mode-routing.md](./references/routing/output-mode-routing.md)
+9. 只有在用户要 `HTML` 时，才进入 [visual-report-spec.md](./references/html-output/visual-report-spec.md)、[report-build-rules.md](./references/html-output/report-build-rules.md) 和 [visual-report-template.html](./references/html-output/visual-report-template.html)
+
+回复写法另外参考：
+
+- [round-response-structure.md](./references/clarification/round-response-structure.md)
 
 ## 一句话总纲
 
-如果只记住一条，就记住这条：
-
-- 先把问题看清；长问题先固定主问题、问题清单和分析底稿；再选场景、方法和风险入口；最后在正式输出前确认用户要文字版还是 HTML 版。
-
-
+- 先把问题问清，再把题目压稳；然后做分类、选场景、跑方法链；命中风险再做边界检查；最后才决定交付文字版还是 HTML。

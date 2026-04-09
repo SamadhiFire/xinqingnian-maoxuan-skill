@@ -1,6 +1,6 @@
 # 模糊输入识别规则
 
-[返回总入口](../../SKILL.md) · [澄清流程](./intake-flow.md) · [问题重述](./problem-restatement.md) · [防漂移规则](./focus-anchor.md)
+[返回总入口](../../SKILL.md) · [协同地图](../README.md) · [轮次结构](./round-response-structure.md) · [澄清流程](./intake-flow.md) · [问题重述](./problem-restatement.md) · [防漂移规则](./focus-anchor.md)
 
 ## 一、文件作用
 
@@ -17,6 +17,7 @@
 
 对应关系：
 
+- 每轮回复的默认三段骨架：看 [round-response-structure.md](./round-response-structure.md)
 - 进入澄清后的追问方式：看 [intake-flow.md](./intake-flow.md)
 - 澄清后的统一收束格式：看 [problem-restatement.md](./problem-restatement.md)
 - 长问题如何防漂移：看 [focus-anchor.md](./focus-anchor.md)
@@ -59,6 +60,9 @@
 2. `最近一次关键事件`
    不是长期概括，而是最近一次最能说明问题的具体事件或情境。
 
+这里的 `目标`，是问用户想先推进什么结果，不是先让用户给问题归类。
+像“团队越来越乱”“规则都失效了”这类治理抱怨句，仍然只算长期概括，不算已经给出了关键事件。
+
 如果这两项还没落地，就不要进入：
 
 - 主要矛盾判断
@@ -66,6 +70,7 @@
 - 操作建议
 - 路线建议
 - HTML 路由
+- 也不要直接说“旧的统一已经破了”“真实规则已经换了”“你现在最该做的四步”
 
 ## 五、必须继续澄清的信号
 

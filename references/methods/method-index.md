@@ -1,12 +1,41 @@
 # 方法入口索引
 
-[返回总入口](../../SKILL.md) · [问题分类](../categories/problem-taxonomy.md) · [场景索引](../scenarios/scene-index.md) · [风险路由](../routing/confidence-rules.md)
+[返回总入口](../../SKILL.md) · [协同地图](../README.md) · [问题分类](../categories/problem-taxonomy.md) · [场景索引](../scenarios/scene-index.md) · [风险路由](../routing/confidence-rules.md)
 
 ## 用途说明
 
 - 这不是第 9 张方法卡，也不是 `routing` 规则全集。
 - 它只解决一件事：当问题已经基本成形后，快速判断先调哪张方法卡、哪张先别调、通常往哪张接。
 - 用法：先按“典型入口信号”选一张卡；拿不准时，优先从 `investigation.md` 开始。
+
+方法层是这个 skill 的主分析引擎。
+前面的 `clarification / categories / scenarios` 都是在给这里做准备；
+后面的 `risks / routing / html-output` 都是在给这里做边界和交付。
+
+## 选卡前先做四个确认
+
+1. 当前最早缺的是哪一层，不要只看自己最熟的那张卡。
+   `对象没清 -> investigation`
+   `主导冲突没清 -> core-contradiction`
+   `阶段和转段没清 -> stage-judgment`
+   `资源主次没清 -> forces-resources`
+   `多方关系和合作边界没清 -> alliance-boundaries`
+   `表达任务和合法性没清 -> communication-calibration`
+   `动作链和组织承接没清 -> execution-routes`
+   `结果回流和纠偏没清 -> review-loop`
+2. 这张卡跑完后要交给谁。
+   方法卡不是孤立说明书，而是分析链上的一个工作站。
+3. 当前有没有更前面的硬前提没完成。
+   如果对象、关键事件、关键控制点还发虚，就不要跳过前门卡。
+4. 当前是不是应急止损场景。
+   需要先止血的局面，不要拿后段卡代替最低限度处置。
+
+## 不要这样用方法卡
+
+- 不要把方法卡当成名词库或标签库，套一个词就算分析。
+- 不要一上来读完 8 张卡再动手；先找当前最早缺失的一张。
+- 不要因为某张卡“更有气势”就跳过前置卡。
+- 不要把方法卡正文写成最终答案本身；它们首先是拆局工位，不是成品报告。
 
 ## 8 张方法卡总览
 
@@ -90,6 +119,13 @@
 - 如果问题明显牵涉公开说法、证据链和合法性争夺，优先把 [`communication-calibration.md`](./communication-calibration.md) 抬前。
 - 如果问题已经进入转段、收口或接管期，优先把 [`stage-judgment.md`](./stage-judgment.md) 和 [`execution-routes.md`](./execution-routes.md) 连起来用。
 - `review-loop` 跑完后，经常会回到 `investigation`、`core-contradiction` 或 `stage-judgment` 开下一轮。
+
+## 切卡判断口诀
+
+- 先问“现在最早缺哪一层”，不要先问“哪张卡最厉害”。
+- 先补前门卡，再上后段卡；前门不稳，后段都会飘。
+- 一张卡至少要产出一个清晰判断，再交下一张卡，不要半懂不懂地连跳三张。
+- 如果跑完一张卡后，还说不清“为什么下一步要接这张”，说明这张卡还没真正跑完。
 
 ## 使用提醒
 
