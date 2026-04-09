@@ -271,10 +271,7 @@ flowchart LR
 
 
 #### 示例报告完整版
-
-- 复杂组织分叉案例输入：[`examples/组织分叉案例输入.md`](./examples/组织分叉案例输入.md)
-- 复杂组织分叉案例：[`examples/组织分叉案例报告.html`](./examples/组织分叉案例报告.html)
-- 验收样例集：[`examples/验收样例集.md`](./examples/验收样例集.md)
+- 复杂组织分叉案例：[`在线查看示例报告`](https://samadhifire.github.io/xinqingnian-skill/examples/%E7%BB%84%E7%BB%87%E5%88%86%E5%8F%89%E6%A1%88%E4%BE%8B%E6%8A%A5%E5%91%8A.html)
 
 #### 示例报告预览
 
@@ -282,56 +279,56 @@ flowchart LR
 先用一屏把问题场景、阶段、服务对象和当前推荐路线压住。
 
 <p align="left">
-  <img src="./examples/screenshots/sample-org-fork-01-cover.png" alt="封面与总判断" width="80%">
+  <img src="./examples/screenshots/sample-org-fork-01-cover.png" alt="封面与总判断" width="75%">
 </p>
 
 **2. 关系图模块**  
 先看谁影响谁、谁卡谁、谁依赖谁，再进入路线判断。
 
 <p align="left">
-  <img src="./examples/screenshots/sample-org-fork-02-relation-graph.png" alt="关系图模块" width="80%">
+  <img src="./examples/screenshots/sample-org-fork-02-relation-graph.png" alt="关系图模块" width="75%">
 </p>
 
 **3. 建议路线区**  
 把当前主路线、成立前提、支点和关键动作压成一屏。
 
 <p align="left">
-  <img src="./examples/screenshots/sample-org-fork-03-main-route.png" alt="建议路线区" width="80%">
+  <img src="./examples/screenshots/sample-org-fork-03-main-route.png" alt="建议路线区" width="75%">
 </p>
 
 **4. 下一步行动与证据链**  
 一边给出近期动作和观察点，一边交代“为什么这样判断”。
 
 <p align="left">
-  <img src="./examples/screenshots/sample-org-fork-04-actions-evidence.png" alt="下一步行动与证据链" width="80%">
+  <img src="./examples/screenshots/sample-org-fork-04-actions-evidence.png" alt="下一步行动与证据链" width="75%">
 </p>
 
 **5. 控制点分布表**  
 把名义归属和现实掌握方拆开，说明谁在改写口径、责任和边界。
 
 <p align="left">
-  <img src="./examples/screenshots/sample-org-fork-05-control-points.png" alt="控制点分布表" width="80%">
+  <img src="./examples/screenshots/sample-org-fork-05-control-points.png" alt="控制点分布表" width="75%">
 </p>
 
 **6. 人物与关系清单**  
 补充各方诉求、态度、依赖和合作边界，不让关系图只停在“谁连着谁”。
 
 <p align="left">
-  <img src="./examples/screenshots/sample-org-fork-06-people-details.png" alt="人物与关系清单" width="80%">
+  <img src="./examples/screenshots/sample-org-fork-06-people-details.png" alt="人物与关系清单" width="75%">
 </p>
 
 **7. 结构拆解与路线比较**  
 把主次问题拆开，再把几条路线放在一起比较，不让判断停在一句口号上。
 
 <p align="left">
-  <img src="./examples/screenshots/sample-org-fork-07-structure-routes.png" alt="结构拆解与路线比较" width="80%">
+  <img src="./examples/screenshots/sample-org-fork-07-structure-routes.png" alt="结构拆解与路线比较" width="75%">
 </p>
 
 **8. 方法出处与结论压缩**  
 最后交代这份判断是从哪些方法来的，并用一句话收住结论。
 
 <p align="left">
-  <img src="./examples/screenshots/sample-org-fork-08-method-sources.png" alt="方法出处与结论压缩" width="80%">
+  <img src="./examples/screenshots/sample-org-fork-08-method-sources.png" alt="方法出处与结论压缩" width="75%">
 </p>
 
 
@@ -358,10 +355,10 @@ Claude Code 会从项目里的 `.claude/skills/`，或全局的 `~/.claude/skill
 ```bash
 # 安装到当前项目（在你的项目根目录执行）
 mkdir -p .claude/skills
-git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git .claude/skills/maozedong-maoxuan-skill
+git clone https://github.com/SamadhiFire/xinqingnian-skill.git .claude/skills/xinqingnian-skill
 
 # 或安装到全局（所有项目都能用）
-git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.claude/skills/maozedong-maoxuan-skill
+git clone https://github.com/SamadhiFire/xinqingnian-skill.git ~/.claude/skills/xinqingnian-skill
 ```
 
 ### Codex
@@ -369,7 +366,7 @@ git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.claude/s
 如果你在用 Codex，一般放进 `$CODEX_HOME/skills/` 或 `~/.codex/skills/` 即可。
 
 ```bash
-git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/skills/maozedong-maoxuan-skill
+git clone https://github.com/SamadhiFire/xinqingnian-skill.git ~/.codex/skills/xinqingnian-skill
 ```
 
 ### 其他平台
@@ -382,7 +379,7 @@ git clone https://github.com/SamadhiFire/maozedong-maoxuan-skill.git ~/.codex/sk
 
 ```bash
 请帮我接入这个 skill：
-https://github.com/SamadhiFire/maozedong-maoxuan-skill
+https://github.com/SamadhiFire/xinqingnian-skill
 
 按 README 进行安装；如果当前平台不支持 skill，就转换成自定义规则。
 ```
@@ -390,7 +387,7 @@ https://github.com/SamadhiFire/maozedong-maoxuan-skill
 ## 仓库结构
 
 ```text
-maozedong-maoxuan-skill/
+xinqingnian-skill/
 ├── .editorconfig                          # UTF-8 / LF 编辑器约束
 ├── .gitattributes                         # Git 行尾规则
 ├── README.md                              # 项目介绍、安装方式、HTML 预览
