@@ -347,7 +347,7 @@ flowchart LR
 
 **别把方法论玩成气势道具。**
 
-## 他的安装方式
+## 安装方式
 
 ### Claude Code
 
@@ -385,7 +385,7 @@ https://github.com/SamadhiFire/xinqingnian-skill
 按 README 进行安装；如果当前平台不支持 skill，就转换成自定义规则。
 ```
 
-## 他的仓库结构
+## 仓库结构
 
 ```text
 xinqingnian-skill/
