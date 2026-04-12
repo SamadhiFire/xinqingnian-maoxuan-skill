@@ -422,3 +422,17 @@ xinqingnian-skill/
 这是把《毛选》蒸馏成一套今天还能用来拆现实问题、推进现实行动的工具。
 
 新青年来中国是能解决问题，会解决问题的！
+
+---
+
+## Star History
+
+<p align="center">
+  <a href="https://www.star-history.com/#SamadhiFire/maozedong-maoxuan-skill&Date">
+    <img src="https://api.star-history.com/svg?repos=SamadhiFire/maozedong-maoxuan-skill&type=Date" alt="Star History Chart">
+  </a>
+</p>
+
+<p align="center">
+  <strong>如果这个项目对你有帮助，欢迎给仓库点个 Star。</strong>
+</p>
