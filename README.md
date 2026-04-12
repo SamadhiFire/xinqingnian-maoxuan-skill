@@ -428,8 +428,8 @@ xinqingnian-skill/
 ## Star History
 
 <p align="center">
-  <a href="https://www.star-history.com/#SamadhiFire/maozedong-maoxuan-skill&Date">
-    <img src="https://api.star-history.com/svg?repos=SamadhiFire/maozedong-maoxuan-skill&type=Date" alt="Star History Chart">
+  <a href="https://www.star-history.com/#SamadhiFire/xinqingnian-skill&Date">
+    <img src="https://api.star-history.com/svg?repos=SamadhiFire/xinqingnian-skill&type=Date" alt="Star History Chart">
   </a>
 </p>
 
