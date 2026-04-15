@@ -1,6 +1,6 @@
 ---
 name: maozedong-maoxuan-skill
-description: 当用户希望用《毛泽东选集》/教员的方法分析现实问题、把毛选中的方法论转成现代分析框架，或明确提出“用毛选帮我分析”“用教员的方法帮我分析 xxx”“用新青年帮我分析”“按新青年的方法拆一下”“按主要矛盾/阶段判断/统一战线/实践检验的方法分析”时使用。适用于工作推进、复杂协作、关系边界、学习成长、生活决策、团队治理等结构性问题；一旦触发，就默认按复杂结构题处理。澄清是所有任务的硬前提：先锁目标，再持续澄清到关键结构基本清楚，之后才进入分析。澄清题默认使用带 A/B/C/D 和“其他”的选项式追问。正式输出前再确认用户要文字版还是 HTML 版。
+description: Analyze structural real-world problems with methods adapted from Mao Zedong's Selected Works. Use when the user explicitly asks "用毛选帮我分析", "用教员的方法帮我分析", "用新青年帮我分析", or wants a structured analysis for work, collaboration, relationships, decisions, learning, or team governance.
 ---
 
 # Mao Method Skill
