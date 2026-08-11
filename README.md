@@ -2,11 +2,9 @@
 
 # 毛选拆局
 
-![](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjE0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjYzk5NzQ1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iODgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjOGYxNDBjIiBmb250LWZhbWlseT0ic2VyaWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7og6Hlv5flmqDlsIU8L3RleHQ+PC9zdmc+)
+<p style="font-size: 1.2em;"><em>"最近大家都在蒸馏各种 skill。但，蒸馏的最终目的，是要<strong>能够解决问题！</strong>"</em></p>
 
-<p><em>"最近大家都在蒸馏各种 skill。但，蒸馏的最终目的，是要<strong>能够解决问题！</strong>"</em></p>
-
-<p><em><strong>新青年来中国是能解决问题，会解决问题的！</strong></em></p>
+<p style="font-size: 1.2em;"><em><strong>新青年来中国是能解决问题，会解决问题的！</strong></em></p>
 
 <p>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
@@ -17,16 +15,16 @@
 
 <br>
 
-<p>把《毛泽东选集》蒸馏成一个真能拆现实问题的 skill。</p>
+<p style="font-size: 1.1em;">把《毛泽东选集》蒸馏成一个真能拆现实问题的 skill。</p>
 
-<p>
+<p style="font-size: 1.1em;">
   不是语录复读机，不是高压话术生成器，也不是"主要矛盾"四个字到处乱扣帽子。<br>
   他只干一件正事：<strong>先把问题一步一步梳理清楚，再把局面拆开，最后给出能往前推的判断和动作。</strong>
 </p>
 
 <br>
 
-<p>你可以把他理解成，把<strong>"新中国最会解决问题的脑子"</strong>请来，当一次"临时参谋"。</p>
+<p style="font-size: 1.1em;">你可以把他理解成，把<strong>"新中国最会解决问题的脑子"</strong>请来，当一次"临时参谋"。</p>
 
 <br>
 
@@ -262,7 +260,7 @@ flowchart LR
 - 控制点分布
 - 执行计划
 
-这类报告不是把长文原样搬进网页，而是把"核心判断 -> 关系结构 -> 建议路线 -> 证据与控制点 -> 方法出处"排成一份可以直接复看和转发的单文件 HTML。
+这类报告不是把长文原样搬进网页，而是把"核心判断 -> 关系结构 -> 建议路线 -> 证据与控制点 -> 方法出处"排成一份可以直接复看和转发的单文件 HT[...]
 
 下面这组预览只展示几个关键模块，不追求完整，只负责让人一眼看出这份 HTML 报告是什么样子。
 
@@ -271,7 +269,7 @@ flowchart LR
 <p>
   <strong>复杂组织分叉案例：</strong>
   <a href="https://samadhifire.github.io/xinqingnian-maoxuan-skill/examples/%E7%BB%84%E7%BB%87%E5%88%86%E5%8F%89%E6%A1%88%E4%BE%8B%E6%8A%A5%E5%91%8A.html">
-    <img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-%E7%A4%BA%E4%BE%8B%E6%8A%A5%E5%91%8A-b81611?style=for-the-badge&labelColor=c99745&logo=googlechrome&logoColor=white"
+    <img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-%E7%A4%BA%E4%BE%8B%E6%8A%A5%E5%91%8A-b81611?style=for-the-badge&labelColor=c99745&logo=googlechrome&logoColor=white[...]
          alt="在线查看示例报告">
   </a>
 </p>
