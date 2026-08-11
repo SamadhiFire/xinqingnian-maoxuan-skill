@@ -1,8 +1,10 @@
 <div align="center">
 
-<p><img src="./examples/screenshots/ChatGPT%20Image%202026%E5%B9%B44%E6%9C%889%E6%97%A5%2023_34_06.png" alt="新青年.skill" width="560"></p>
+<p style="margin: 40px 0; padding: 60px 20px; background: linear-gradient(135deg, #d8c7a3 0%, #c99745 100%); border: 3px solid #8f140c; border-radius: 12px; display: inline-block; min-width: 400px;">
+  <span style="font-size: 56px; font-weight: bold; color: #8f140c; letter-spacing: 8px; font-family: 'Microsoft YaHei', 'PingFang SC', serif;">毛选拆局</span>
+</p>
 
-<p><em>“最近大家都在蒸馏各种 skill。但，蒸馏的最终目的，是要<strong>能够解决问题！</strong>”</em></p>
+<p><em>"最近大家都在蒸馏各种 skill。但，蒸馏的最终目的，是要<strong>能够解决问题！</strong>"</em></p>
 
 <p><em><strong>新青年来中国是能解决问题，会解决问题的！</strong></em></p>
 
@@ -18,19 +20,19 @@
 <p>把《毛泽东选集》蒸馏成一个真能拆现实问题的 skill。</p>
 
 <p>
-  不是语录复读机，不是高压话术生成器，也不是“主要矛盾”四个字到处乱扣帽子。<br>
+  不是语录复读机，不是高压话术生成器，也不是"主要矛盾"四个字到处乱扣帽子。<br>
   他只干一件正事：<strong>先把问题一步一步梳理清楚，再把局面拆开，最后给出能往前推的判断和动作。</strong>
 </p>
 
 <br>
 
-<p>你可以把他理解成，把<strong>“新中国最会解决问题的脑子”</strong>请来，当一次“临时参谋”。</p>
+<p>你可以把他理解成，把<strong>"新中国最会解决问题的脑子"</strong>请来，当一次"临时参谋"。</p>
 
 <br>
 
 <br>
 
-<p><em>原“<strong>毛选拆局.Skill</strong>”，因名字太过敏感，现更名为“新青年.Skill”</em></p>
+<p><em>原"<strong>毛选拆局.Skill</strong>"，因名字太过敏感，现更名为"新青年.Skill"</em></p>
 <br>
 
 <p>
@@ -44,7 +46,8 @@
 
 <p>
   <a href="https://samadhifire.github.io/xinqingnian-maoxuan-skill/examples/%E7%BB%84%E7%BB%87%E5%88%86%E5%8F%89%E6%A1%88%E4%BE%8B%E6%8A%A5%E5%91%8A.html">
-    <img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-%E7%A4%BA%E4%BE%8B%E6%8A%A5%E5%91%8A-b81611?style=for-the-badge&labelColor=c99745&logo=googlechrome&logoColor=white" alt="在线查看示例报告">
+    <img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-%E7%A4%BA%E4%BE%8B%E6%8A%A5%E5%91%8A-b81611?style=for-the-badge&labelColor=c99745&logo=googlechrome&logoColor=white"
+         alt="在线查看示例报告">
   </a>
 </p>
 
@@ -55,7 +58,7 @@
 
 ## 他适合谁
 
-更适合这类“<strong>表面像摩擦，底层其实是结构问题</strong>”的局面：
+更适合这类"<strong>表面像摩擦，底层其实是结构问题</strong>"的局面：
 
 - **项目推进卡住**：项目推进不动，人人都在忙，但关键结果就是不动。
 - **多人关系拉扯**：合伙人、同事、上下级之间互相拉扯，信息不透明，责任不清楚。
@@ -65,21 +68,21 @@
 
 一句话：
 
-**他擅长的不是“答题”，而是“拆局”。**
+**他擅长的不是"答题"，而是"拆局"。**
 
-## 他和普通“毛选风格 Prompt”有什么不同
+## 他和普通"毛选风格 Prompt"有什么不同
 
-不是把语言换成“毛选口吻”，而是把处理问题的方法换掉了：
+不是把语言换成"毛选口吻"，而是把处理问题的方法换掉了：
 
 1. **不抢答**：先调查，再判断，不装一眼看穿全局。
 2. **不空喊**：不堆大词，重点是主要矛盾、阶段、力量、路线和风险。
-3. **不跳步**：先锁目标，再补澄清，再拆主问题，不靠模型自己“记住”。
+3. **不跳步**：先锁目标，再补澄清，再拆主问题，不靠模型自己"记住"。
 4. **不悬空**：不只分析，最后会落到路线、顺序和下一步动作，而不是停在一段气势很足的话。
 5. **不只给文字**：除了文字版分析，还能生成可保存、可分享的单文件 **HTML 报告**。
 
 ## 他怎么工作
 
-这不是“你一句，我输出八段”的技能，而是一套四步工作法：
+这不是"你一句，我输出八段"的技能，而是一套四步工作法：
 
 > **先问清，再拆局；先定线，再交付。**
 
@@ -129,7 +132,7 @@ flowchart LR
 
 ## 他的适用场景
 
-它更适合这类“表面像摩擦，底层其实是结构问题”的局面：
+它更适合这类"表面像摩擦，底层其实是结构问题"的局面：
 
 <table>
   <tr>
@@ -182,7 +185,7 @@ flowchart LR
 
 一句话：
 
-**越像“结构题”，越适合用它来拆。**
+**越像"结构题"，越适合用它来拆。**
 
 
 ## 他的使用方式
@@ -225,11 +228,11 @@ flowchart LR
 ```text
 请用毛选拆局的方法帮我分析一下我现在这个团队的问题。
 
-最近一两个月，我越来越感觉团队表面上还在正常运转，但很多原来默认有效的规则已经开始失灵了。比如会上说好的分工，会后经常各干各的；有些事名义上有人负责，真出了问题又没人接；同一件事经常会出现两个口径，下面的人也不知道到底该听谁的。上周还有一次比较典型：一个项目明明会上已经过了一遍，结果到临近交付才发现两个小组理解完全不一样，中间也没人把关键变化同步清楚。
+最近一两个月，我越来越感觉团队表面上还在正常运转，但很多原来默认有效的规则已经开始失灵了。比如会上说好的分工，会后经常各干各的；有[...]
 
-我现在最想先弄明白的，不是立刻拿一套整改方案，而是先判断这到底更像节奏问题、角色边界问题，还是其实真实规则已经变了，只是没有人明说。
+我现在最想先弄明白的，不是立刻拿一套整改方案，而是先判断这到底更像节奏问题、角色边界问题，还是其实真实规则已经变了，只是没有人明说[...]
 
-先别急着下结论，如果信息不够请先追问我。最后帮我输出一份HTML报告。”。
+先别急着下结论，如果信息不够请先追问我。最后帮我输出一份HTML报告。"。
 ```
 
 ## 他的输出结果
@@ -246,7 +249,7 @@ flowchart LR
 - 下一步动作
 
 但在进入这一步之前，如果输入还模糊，系统应先做一轮选项式澄清，而不是直接下判断。
-如果用户给了聊天记录、微信片段或局部措辞，默认也先把它们当证据材料，而不是立刻下沉成“帮你写一句怎么发”。
+如果用户给了聊天记录、微信片段或局部措辞，默认也先把它们当证据材料，而不是立刻下沉成"帮你写一句怎么发"。
 
 ### 2. 单文件 HTML 报告
 
@@ -259,7 +262,7 @@ flowchart LR
 - 控制点分布
 - 执行计划
 
-这类报告不是把长文原样搬进网页，而是把“核心判断 -> 关系结构 -> 建议路线 -> 证据与控制点 -> 方法出处”排成一份可以直接复看和转发的单文件成品。
+这类报告不是把长文原样搬进网页，而是把"核心判断 -> 关系结构 -> 建议路线 -> 证据与控制点 -> 方法出处"排成一份可以直接复看和转发的单文件 HTML。
 
 下面这组预览只展示几个关键模块，不追求完整，只负责让人一眼看出这份 HTML 报告是什么样子。
 
@@ -268,7 +271,8 @@ flowchart LR
 <p>
   <strong>复杂组织分叉案例：</strong>
   <a href="https://samadhifire.github.io/xinqingnian-maoxuan-skill/examples/%E7%BB%84%E7%BB%87%E5%88%86%E5%8F%89%E6%A1%88%E4%BE%8B%E6%8A%A5%E5%91%8A.html">
-    <img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-%E7%A4%BA%E4%BE%8B%E6%8A%A5%E5%91%8A-b81611?style=for-the-badge&labelColor=c99745&logo=googlechrome&logoColor=white" alt="在线查看示例报告">
+    <img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-%E7%A4%BA%E4%BE%8B%E6%8A%A5%E5%91%8A-b81611?style=for-the-badge&labelColor=c99745&logo=googlechrome&logoColor=white"
+         alt="在线查看示例报告">
   </a>
 </p>
 
@@ -296,7 +300,7 @@ flowchart LR
 </p>
 
 **4. 下一步行动与证据链**  
-一边给出近期动作和观察点，一边交代“为什么这样判断”。
+一边给出近期动作和观察点，一边交代"为什么这样判断"。
 
 <p align="left">
   <img src="./examples/screenshots/sample-org-fork-04-actions-evidence.png" alt="下一步行动与证据链" width="75%">
@@ -310,7 +314,7 @@ flowchart LR
 </p>
 
 **6. 人物与关系清单**  
-补充各方诉求、态度、依赖和合作边界，不让关系图只停在“谁连着谁”。
+补充各方诉求、态度、依赖和合作边界，不让关系图只停在"谁连着谁"。
 
 <p align="left">
   <img src="./examples/screenshots/sample-org-fork-06-people-details.png" alt="人物与关系清单" width="75%">
@@ -336,7 +340,7 @@ flowchart LR
 这个 skill 不适合下面几种用法：
 
 - 只想摘毛选原文，不想分析现实问题
-- 只想学几句“主要矛盾在于你不听话”这种吓人的台词
+- 只想学几句"主要矛盾在于你不听话"这种吓人的台词
 - 拿方法论给别人扣帽子、压人、操控关系
 - 问题本身很轻，用普通常识建议就够了
 - 纯技术实现细节问题，不涉及结构判断和路线设计
@@ -370,7 +374,7 @@ git clone https://github.com/SamadhiFire/xinqingnian-maoxuan-skill.git ~/.codex/
 
 ### 其他平台
 
-不是每个平台都叫 skill，但大多数 agent 平台都支持“自定义系统提示词 / 自定义技能目录 / 项目级规则”。
+不是每个平台都叫 skill，但大多数 agent 平台都会支持"自定义系统提示词 / 自定义技能目录 / 项目级规则"。
 
 最省事的用法（大部分平台都很聪明了）：
 
