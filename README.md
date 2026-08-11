@@ -1,8 +1,8 @@
 <div align="center">
 
-<p style="margin: 50px 0; padding: 80px 20px; background: linear-gradient(135deg, #d8c7a3 0%, #c99745 100%); border: 3px solid #8f140c; border-radius: 12px; display: inline-block; min-width: 500px;">
-  <span style="font-size: 92px; font-weight: bold; color: #8f140c; letter-spacing: 12px; font-family: 'Microsoft YaHei', 'PingFang SC', serif; line-height: 1.2;">毛选拆局</span>
-</p>
+# 毛选拆局
+
+![](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjE0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjYzk5NzQ1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iODgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjOGYxNDBjIiBmb250LWZhbWlseT0ic2VyaWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7og6Hlv5flmqDlsIU8L3RleHQ+PC9zdmc+)
 
 <p><em>"最近大家都在蒸馏各种 skill。但，蒸馏的最终目的，是要<strong>能够解决问题！</strong>"</em></p>
 
