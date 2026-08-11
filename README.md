@@ -1,7 +1,7 @@
 <div align="center">
 
-<p style="margin: 40px 0; padding: 60px 20px; background: linear-gradient(135deg, #d8c7a3 0%, #c99745 100%); border: 3px solid #8f140c; border-radius: 12px; display: inline-block; min-width: 400px;">
-  <span style="font-size: 56px; font-weight: bold; color: #8f140c; letter-spacing: 8px; font-family: 'Microsoft YaHei', 'PingFang SC', serif;">毛选拆局</span>
+<p style="margin: 50px 0; padding: 80px 20px; background: linear-gradient(135deg, #d8c7a3 0%, #c99745 100%); border: 3px solid #8f140c; border-radius: 12px; display: inline-block; min-width: 500px;">
+  <span style="font-size: 92px; font-weight: bold; color: #8f140c; letter-spacing: 12px; font-family: 'Microsoft YaHei', 'PingFang SC', serif; line-height: 1.2;">毛选拆局</span>
 </p>
 
 <p><em>"最近大家都在蒸馏各种 skill。但，蒸馏的最终目的，是要<strong>能够解决问题！</strong>"</em></p>
