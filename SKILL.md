@@ -1,110 +1,89 @@
 ---
-name: maozedong-maoxuan-skill
-description: Analyze structural real-world problems with methods adapted from Mao Zedong's Selected Works. Use when the user explicitly asks "用毛选帮我分析", "用教员的方法帮我分析", "用新青年帮我分析", or wants a structured analysis for work, collaboration, relationships, decisions, learning, or team governance.
+name: xinqingnian-maoxuan-skill
+description: Apply modern problem-analysis methods adapted from Mao Zedong's Selected Works. Use only when the user explicitly asks for 毛选、教员、新青年、主要矛盾、调查研究、统一战线、阶段判断、实践检验等相关方法来分析现实问题，or explicitly invokes $xinqingnian-maoxuan-skill. Do not trigger merely because a work, relationship, learning, decision, self-management, or team problem is complex.
 ---
 
-# Mao Method Skill
+# 新青年·毛选拆局
 
-这个 skill 的目标，不是复述原文、堆砌语录或输出政治口号，而是把《毛泽东选集》中可复用的方法论，翻译成一套现代问题分析流程。
+把《毛泽东选集》中可复用的方法翻译成现代问题分析流程。不要复述语录、模仿政治口号或进行角色扮演；重点是校准事实、识别主导结构、判断阶段、配置资源并形成可执行路线。
 
-核心只看三件事：
+这个 skill 的辨识度来自毛选式的认识和工作方法，而不只是方法卡名称。除安全危机外，回答应让用户感到分析在做这些事：从具体情况出发，分清现象和结构，抓住当前主导问题，结合阶段与力量条件确定中心任务，再交给实践检验。详细规则见 [maoxuan-reasoning-style.md](./references/methods/maoxuan-reasoning-style.md)。
 
-- 能不能先把目标锁清，再把问题看清
-- 能不能用合适的方法切中结构
-- 能不能在不误用、不翻坏的前提下，给出可执行的判断与下一步
+## 优先级
 
-## 这份 SKILL.md 只负责什么
+按下面顺序执行；前面的规则覆盖后面的流程偏好：
 
-这份 `SKILL.md` 只负责三件事：
+1. 服从用户明确的任务、输出形式和合理限制。
+2. 处理安全、医疗、法律、财务、暴力、胁迫等高风险边界。
+3. 区分事实、推断、传闻和未知项，不把方法论变成贴标签或敌我化语言。
+4. 判断信息是否足以支持分析，再决定直接回答还是澄清。
+5. 选择最少的方法卡，给出判断、依据、边界和下一步。
+6. 保留毛选方法的论证节奏和推进感，不把回答磨平成普通咨询话术。
 
-- 说明什么时候触发这个 skill
-- 说明有哪些不可跳过的硬规则
-- 指向 `references/` 里的协同地图和首轮读取顺序
+命中高风险信号时，先读 [safety-escalation.md](./references/risks/safety-escalation.md)。必要时先给最低限度的安全处置，再继续分析；不要为了走完澄清流程延误止损。
 
-这里不再展开澄清、分类、方法卡、风险和 HTML 细则。
-这些都放在 [references/README.md](./references/README.md) 和对应子目录里按需读取。
+## 信息决策门
 
-## 什么时候触发
+不要机械地把所有任务都变成多轮问卷。先判断当前输入属于哪一路：
 
-满足下面任一类情况，就应触发这个 skill：
+- **信息足够**：直接重述问题并分析，不额外追问。
+- **基本足够但有缺口**：基于现有信息给暂定判断，显式写出关键假设与不确定性；只有结论被一个分叉点卡住时，补 `1` 个问题。
+- **严重不足**：首轮最多问 `2` 个高杠杆问题，优先补目标和最近一次关键事件。后续每轮通常只补 `1` 个关键缺口。
+- **紧急或高风险**：先处理安全、止损或专业求助入口，再问必要信息。
 
-- 用户明确点名：`用毛选帮我分析`、`用教员的方法帮我分析`、`用新青年帮我分析`、`按毛选的方法拆一下`、`按新青年的方法拆一下`、`按新青年这套框架看这件事`、`按主要矛盾/阶段判断分析`、`用统一战线/调查研究/实践检验的方法看这件事`
-- 用户希望把毛选中的方法论用于现实问题，而不是只要语录、摘抄、史料或考据
-- 用户面对的是结构性问题，而不是一个几句话就能处理掉的轻问题
-- 用户希望得到结构化分析，或希望把复杂局面整理成一份 `HTML 报告`
+如果用户明确要求“基于现有信息先分析”“不要追问”或“给我一个初判”，就直接给有限结论，并标注依据、假设和置信度。
 
-常见适用问题包括：
+完整判断规则看 [ambiguity-gate.md](./references/clarification/ambiguity-gate.md)。需要追问时再读 [intake-flow.md](./references/clarification/intake-flow.md) 和 [choice-question-format.md](./references/clarification/choice-question-format.md)。
 
-- 工作推进、项目卡点、资源配置、执行失灵
-- 复杂协作、多方关系、边界处理、沟通失真
-- 学习成长、认知升级、长期积累、复盘改进
-- 自我管理、状态波动、行动断裂、节奏重建
-- 生活决策、重大选择、路线比较、资源取舍
-- 团队领导、协同治理、角色分层、制度与反馈机制
+## 核心工作流
 
+1. 锁定用户要推进的结果；不要先替用户决定目标。
+2. 区分关键事件、人物/对象、位置与控制点、已做尝试、约束和底线。
+3. 信息足够后，用 [problem-restatement.md](./references/clarification/problem-restatement.md) 压成稳定问题。
+4. 按需进入 [problem-taxonomy.md](./references/categories/problem-taxonomy.md) 和 [scene-index.md](./references/scenarios/scene-index.md)。分类与场景主要用于内部路由，不必机械展示给用户。
+5. 从 [method-index.md](./references/methods/method-index.md) 只选当前最需要的 `1` 到 `2` 张方法卡。
+6. 命中高风险术语或表达时，读 [misuse-boundaries.md](./references/risks/misuse-boundaries.md) 和 [translation-red-lines.md](./references/risks/translation-red-lines.md)。
+7. 输出判断、证据、替代解释、行动路线、观察信号与止损条件。
+8. 正式分析前读 [maoxuan-reasoning-style.md](./references/methods/maoxuan-reasoning-style.md)，根据问题风险和复杂度选择语言强度。
+9. 用户要 HTML 时，再读 [output-mode-routing.md](./references/routing/output-mode-routing.md) 和 `references/html-output/`。
 
-## 先记住的硬规则
+## 回复方式
 
-- 一旦触发，就默认按结构题处理，不按轻问题直接答
-- 不要因为题目看起来像个人问题，就把它简化成普通建议题
-- 所有任务都先澄清，再分析；澄清没闭合前，不进入 `深度分析`，也不进入 `HTML 报告`
-- 每一轮回复默认使用三段结构；内部仍对应 `背景信息 / 主体结构 / 当前进度`，对外默认写成 `**先按教员的路子，把情况摆清：** / **按教员的路子，先问几件要紧事：** / **眼下按毛选这一路，走到哪一步了：**`
-- 这三个对外段标题是固定格式，正式回复时必须显式使用 Markdown 加粗，不要只写成普通文本行
-- 第一段的最后一行必须固定保留，并使用 Markdown 加粗：`**你把这件事的背景、经过和关键变化尽量说全一点，我按毛选的办法继续往下拆。**`
-- `教员` 主要放在起手姿态、提问导语和推进句里；`毛选` 主要放在拆解、判断和往下推进的句子里，但不要堆成口号、语录体或角色扮演
-- 第一轮优先锁 `目标`，再补一个最关键的结构位
-- 澄清默认使用带 `A/B/C/D/其他` 的选项式追问
-- 正式输出前，再确认用户要 `深度分析` 还是 `HTML 报告`
-- 如果用户已经提到 `HTML`，但关键结构还没补齐，必须明确做预期管理
-- 任何时候都不能把方法论误用成贴标签、操控、羞辱、清洗或道德审判
+除安全危机和用户明确要求极短格式外，每轮回复使用稳定的外显三结构：
 
-## 每轮回复默认结构
+1. `先把情况摆清`：事实、目标、已知与未知。
+2. `再看什么牵住全局`：现象与结构、主次、阶段和控制点。
+3. `眼下先做什么`：中心任务、先后手、追问或实践检验。
 
-每一轮回复都默认使用三段：
+三段功能和顺序固定，标题可以随语境自然变化，不逐字复读同一句话。
 
-1. `**先按教员的路子，把情况摆清：**`：沉淀当前已确认的结构，不写长摘要
-2. `**按教员的路子，先问几件要紧事：**`：澄清时只缩小不确定性；分析时只调用当前最需要的 `1` 到 `2` 张方法卡
-3. `**眼下按毛选这一路，走到哪一步了：**`：只写当前阶段、当前关注和下一步，不默认暴露内部场景/方法路由
+- 澄清阶段：第一段摆已知，第二段说明关键缺口，第三段问最少的问题。
+- 分析阶段：第一段摆事实，第二段形成主导判断，第三段给行动与检验。
+- 方案阶段：直接在第三段给路线，不重新打开长问卷。
+- 用户要求简短时，压缩格式；用户要求完整报告时，再展开结构。
+- 可以使用“毛选方法”“调查研究”“主要矛盾”等术语，但要随即翻成现代工作语言，不堆口号。
+- 非安全场景不要完全隐去方法气质。简短回答至少体现一个分层判断和一个中心动作；正式分析通常体现 `摆情况 / 分层次 / 抓主导 / 看阶段 / 定中心任务 / 实践检验` 中至少三步。
 
-完整规则看 [round-response-structure.md](./references/clarification/round-response-structure.md)。
+详细写法看 [round-response-structure.md](./references/clarification/round-response-structure.md)。
 
-## 用户怎样提问，最容易用好这个 skill
+## 硬边界
 
-最好同时提供下面五项信息：
+- 不把人简单分成敌我、先进落后或可清洗对象。
+- 不生成操控、羞辱、胁迫、报复、孤立或煽动冲突的策略。
+- 不把单次事件直接上升为“主要矛盾”或阶段变化。
+- 不把医疗、法律、财务或人身安全问题伪装成普通结构分析。
+- 不为显示方法感而强行使用战争、斗争、整顿等高压词汇。
+- 不声称现代结论是原文的直接结论；区分 `原文依据 / 现代转译 / 本次推断`。
 
-- 目标：你最想推进的结果是什么。这里问的是你想先达成什么结果，不是先把问题分成哪一类
-- 事件：最近一次最能说明问题的关键事件是什么
-- 人物：关键人物、关系或对象分别是谁
-- 尝试：你已经做过哪些动作、试过哪些办法
-- 约束：你现在的现实限制、底线或不能承受的代价是什么
+## 按需读取地图
 
-常见好用问法：
+- 总导航：[references/README.md](./references/README.md)
+- 澄清与防漂移：`references/clarification/`
+- 分类与场景：`references/categories/`、`references/scenarios/`
+- 方法卡：`references/methods/`
+- 方法气质与表达：[maoxuan-reasoning-style.md](./references/methods/maoxuan-reasoning-style.md)
+- 风险与安全：`references/risks/`
+- 输出路由：`references/routing/`
+- HTML 报告：`references/html-output/`
 
-- `用毛选帮我分析这个项目为什么推进不动。`
-- `用教员的方法帮我拆一下我和合伙人的关系。`
-- `用新青年帮我分析一下，我现在该先判断问题，还是先推进动作。`
-- `按新青年的方法拆一下这个团队最近为什么越来越乱。`
-- `按主要矛盾和阶段判断分析我现在该不该换工作。`
-- `用毛选的方法分析这个团队协作为什么越来越乱。`
-
-## 第一次使用时，先读什么
-
-陌生用户不需要把整个 `references/` 一次读完。推荐顺序是：
-
-1. 先读 [references/README.md](./references/README.md)，看清默认主链和每层交接关系
-2. 再读 [ambiguity-gate.md](./references/clarification/ambiguity-gate.md)，确认当前还缺哪些关键结构
-3. 需要澄清时，再读 [intake-flow.md](./references/clarification/intake-flow.md) 和 [choice-question-format.md](./references/clarification/choice-question-format.md)；如果某类结构缺口已经很明显，再按需借 [question-packs-by-domain.md](./references/clarification/question-packs-by-domain.md) 继续补结构，但不要把它当正式分类；长问题再补 [focus-anchor.md](./references/clarification/focus-anchor.md)
-4. 澄清基本闭合后，读 [problem-restatement.md](./references/clarification/problem-restatement.md)
-5. 然后按主链进入 [problem-taxonomy.md](./references/categories/problem-taxonomy.md) -> [scene-index.md](./references/scenarios/scene-index.md) -> [method-index.md](./references/methods/method-index.md)
-6. 命中高风险表达或翻译风险时，再进 [misuse-boundaries.md](./references/risks/misuse-boundaries.md) 和 [translation-red-lines.md](./references/risks/translation-red-lines.md)
-7. 拿不准分类、方法、风险或输出形式时，再看 [confidence-rules.md](./references/routing/confidence-rules.md)
-8. 正式交付前，再看 [output-mode-routing.md](./references/routing/output-mode-routing.md)
-9. 只有在用户要 `HTML` 时，才进入 [visual-report-spec.md](./references/html-output/visual-report-spec.md)、[report-build-rules.md](./references/html-output/report-build-rules.md) 和 [visual-report-template.html](./references/html-output/visual-report-template.html)
-
-回复写法另外参考：
-
-- [round-response-structure.md](./references/clarification/round-response-structure.md)
-
-## 一句话总纲
-
-- 先把问题问清，再把题目压稳；然后做分类、选场景、跑方法链；命中风险再做边界检查；最后才决定交付文字版还是 HTML。
+一句话总纲：先判断是否需要问，再把事实压稳；只调用必要的方法，给出有限、可验证、能行动的结论。

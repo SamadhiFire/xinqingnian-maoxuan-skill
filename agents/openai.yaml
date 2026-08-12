@@ -1,4 +1,7 @@
 interface:
-  display_name: "Mao Method"
-  short_description: "Structured analysis for work, decisions, and team problems"
-  default_prompt: "Use $maozedong-maoxuan-skill to analyze this situation with a structured, clarification-first approach."
+  display_name: "新青年·毛选拆局"
+  short_description: "用毛选方法拆解复杂现实问题并形成可验证路线"
+  default_prompt: "Use $xinqingnian-maoxuan-skill to analyze this situation with modern methods adapted from Mao Zedong's Selected Works."
+
+policy:
+  allow_implicit_invocation: false
